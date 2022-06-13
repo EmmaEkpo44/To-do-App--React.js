@@ -1,0 +1,16 @@
+(function () {
+  var script = document.createElement("script");
+  script.type = "text/javascript";
+  script.src = "https://cdn.cookielaw.org/scripttemplates/otSDKStub.js";
+  script.setAttribute(
+    "data-domain-script",
+    "2b8f0235-bba3-48f8-b40b-77394cd12e03"
+  );
+
+  var script2 = document.createElement("script");
+  script2.type = "text/javascript";
+  script2.text = "function OptanonWrapper() {}";
+
+  document.write(script.outerHTML);
+  document.write(script2.outerHTML);
+})();

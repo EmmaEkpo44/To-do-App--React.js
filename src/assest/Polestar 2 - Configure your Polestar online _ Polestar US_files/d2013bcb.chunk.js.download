@@ -1,0 +1,263 @@
+(window.__LOADABLE_LOADED_CHUNKS__=window.__LOADABLE_LOADED_CHUNKS__||[]).push([[16],{"10L0":function(e,t,n){"use strict";var a=n("q1tI"),o=n.n(a),r=n("5SEd"),l=n("fV9A"),i=n("GkzE"),c=n("ixgB"),s=n("2kWF"),u=n("AeFk"),d=n("Rq2L"),b=n("buVf"),m=n("MlsX"),v=n("4WN1");const p=n("z2xN").c&&(v.b||!!document.createElement("video").webkitRequestFullscreen)&&!(/iPad|iPhone|iPod/.test(navigator.platform)||navigator.maxTouchPoints&&navigator.maxTouchPoints>2&&/MacIntel/.test(navigator.platform));function f(e){if(null!==e&&e.length>0)for(const t of e){const e=t;"auto"!==e.line&&-1!==e.line||(e.line=80,e.snapToLines=!1)}}var g=n("ufXH"),h=n("X/xB"),O=n("cVrL"),y=n("n2Mo");const j=Object(a.memo)(Object(a.forwardRef)(({children:e,...t},n)=>o.a.createElement(E,{ref:n,...t},o.a.createElement(w,{...t}),o.a.createElement(C,null,e))));j.displayName="VideoSkeleton";var k=j;const E=r.a.div`
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+`;E.displayName="Wrapper";const C=r.a.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+`;C.displayName="Center";const w=Object(r.a)(O.a,Object(y.a)(!1,"width","height"))``;w.displayName="CustomSkeleton";var x=n("mBtZ"),L=n("eEGE"),$=n("8PNI"),S=n("M4ns"),P=n("HBCW"),B=n("gtio");const N=Object(a.memo)(Object(a.forwardRef)(({buffering:e,playing:t,...n},a)=>o.a.createElement(T,{...n,ref:a,animate:{opacity:e?1:0},transition:{delay:e&&t?1:0}},e&&o.a.createElement(b.c,{type:b.b.inverted,size:b.a.medium}))));N.displayName="VideoBufferSkeleton";var z=N;const T=Object(r.a)(S.a.div)(({theme:e})=>u.b`
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    position: absolute;
+    pointer-events: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: ${e.video.skeleton.backgroundColor};
+  `);T.displayName="Wrapper";var M=n("SH6K"),V=n("tmQc"),R=n("rAqL"),A=n("G2bx"),D=n("bzsI"),F=n("4j9f"),_=n("2S69"),I=n("HKgR"),K=n("IdKh"),U=n("93m5");const q=e=>()=>{console.warn(`Trying to use header context consumer, but no context provider for "${e}". Please make sure you use the useHeader inside a <PolestarApp />`)},H=Object(a.createContext)({videoRef:Object(a.createRef)(),playerRef:Object(a.createRef)(),menuOpen:!1,setMenuOpen:q("setMenuOpen"),fullscreen:!1,setFullscreen:q("setFullscreen"),muted:!1,setMuted:q("setMuted"),volume:1,setVolume:q("setVolume"),videoCurrentTime:new K.a(0),playing:!1,setPlaying:q("setPlaying"),togglePlaying:q("togglePlaying"),canPlay:!0,buffering:!1,duration:1,availableSubtitles:[],selectedSubtitle:0,setSelectedSubtitle:q("setSelectedSubtitle"),ended:!1,startedPlaying:!1}),W=()=>Object(a.useContext)(H),X=({children:e,...t})=>{const n=Object(a.useRef)(null),r=Object(a.useRef)(null),[l,i]=Object(a.useState)(!1),[c,s]=Object(a.useState)(!1),[u,d]=Object(a.useState)(!1),[b,m]=Object(a.useState)(!!t.muted),[g,h]=Object(a.useState)(1),O=Object(U.a)(0),[y,j]=Object(a.useState)(t.autoPlay||!1),[k,E]=Object(a.useState)(!1),[C,w]=Object(a.useState)(!0),[x,L]=Object(a.useState)(0),[$,S]=Object(a.useState)([]),[P,B]=Object(a.useState)(-1),[N,z]=Object(a.useState)(!1);Object(a.useEffect)(()=>{if(r.current){const e=r.current,t=()=>{O.set(null==e?void 0:e.currentTime)},n=()=>L(e.duration);return e.addEventListener("timeupdate",t),e.addEventListener("durationchange",n),()=>{e.removeEventListener("timeupdate",t),e.removeEventListener("durationchange",n)}}},[O]),Object(a.useEffect)(()=>{var e,t;const n=()=>{d(Object(v.c)())};document.addEventListener("fullscreenchange",n),null===(e=r.current)||void 0===e||e.addEventListener("webkitendfullscreen",n),null===(t=r.current)||void 0===t||t.addEventListener("webkitbeginfullscreen",n);const a=r.current;return()=>{document.removeEventListener("fullscreenchange",n),a&&(a.removeEventListener("webkitendfullscreen",n),a.removeEventListener("webkitbeginfullscreen",n))}},[r,d]),Object(a.useEffect)(()=>{u?p?Object(v.d)(n):Object(v.d)(r):Object(v.a)()},[u,r,n]);const T=!!t.autoPlay,M=Object(a.useRef)(""),V=Object(a.useCallback)((e=!1)=>{var t;j(T||!1),E(!1),i(e),w(!0),s(!1),z(!1),O.set(0),null===(t=null==r?void 0:r.current)||void 0===t||t.load()},[O,T]);Object(a.useEffect)(()=>{if((null==r?void 0:r.current)&&"undefined"!=typeof MutationObserver){const e=r.current,t=()=>{const t=[e,...e.querySelectorAll("source")].map(e=>e.getAttribute("src")||"").join(";"),n=t!==M.current;n&&M.current&&V(),(null===M.current||n)&&(M.current=t)},n=new MutationObserver(t);return t(),n.observe(e,{attributes:!0,subtree:!0,childList:!0}),()=>n.disconnect()}},[V,r]);const R=Object(a.useCallback)(()=>{var e,t,n;r.current&&((null===(e=r.current)||void 0===e?void 0:e.paused)?(N&&V(!0),null===(t=null==r?void 0:r.current)||void 0===t||t.play().catch(e=>{console.error(e)})):null===(n=null==r?void 0:r.current)||void 0===n||n.pause())},[N,V]);return Object(a.useEffect)(()=>{if(r.current){const e=r.current,t=()=>{j(!(null==e?void 0:e.paused)),i(!0)},n=()=>{l&&(E(!0),w(!1)),L(e.duration)},a=()=>{E(!0),w(!1)},o=()=>{E(!1),w(!0)},c=()=>{E(!0),L(e.duration)},s=()=>{z(!0),j(!1)};return e.addEventListener("play",t),e.addEventListener("pause",t),e.addEventListener("canplay",n),e.addEventListener("canplaythrough",a),e.addEventListener("waiting",o),e.addEventListener("loadedmetadata",c),e.addEventListener("ended",s),()=>{e.removeEventListener("play",t),e.removeEventListener("pause",t),e.removeEventListener("canplaythrough",n),e.removeEventListener("waiting",o),e.removeEventListener("canplay",a),e.removeEventListener("loadedmetadata",c),e.removeEventListener("ended",s)}}},[E,w,L,l]),Object(a.useEffect)(()=>{(null==r?void 0:r.current)&&(r.current.volume=0===r.current.volume?1:r.current.volume,r.current.muted=b)},[r,b,g]),Object(a.useEffect)(()=>{(null==r?void 0:r.current)&&(r.current.volume=g)},[r,g]),Object(a.useEffect)(()=>{const e=r.current,t=()=>{var e,t,n;m((null===(e=null==r?void 0:r.current)||void 0===e?void 0:e.muted)||0===(null===(t=null==r?void 0:r.current)||void 0===t?void 0:t.volume)),h((null===(n=null==r?void 0:r.current)||void 0===n?void 0:n.volume)||1)};return null==e||e.addEventListener("volumechange",t),()=>{null==e||e.removeEventListener("volumechange",t)}},[r,m,h]),Object(a.useEffect)(()=>{const e=r.current;if(e){const t=e.textTracks,n=()=>{S((e=>{const t=[];if(e){let n=0;for(const a of e){t.push({label:a.label,language:a.language,mode:a.mode,index:n});const e=()=>{a.cues&&f(a.cues),a.removeEventListener("cuechange",e)};a.addEventListener("cuechange",e),setTimeout(()=>{a.cues&&f(a.cues)},1e3),n++}}return t})(t)),B((e=>{if(e){let t=0;for(const n of e){if("showing"===n.mode)return t;t++}}return-1})(t))};return e.addEventListener("loadstart",n),(null==t?void 0:t.addEventListener)&&(t.addEventListener("addtrack",n),t.addEventListener("removetrack",n),t.addEventListener("change",n)),()=>{e.removeEventListener("loadstart",n)}}},[B,S]),o.a.createElement(H.Provider,{value:{playerRef:n,videoRef:r,menuOpen:c,setMenuOpen:s,fullscreen:u,setFullscreen:d,muted:b,setMuted:m,volume:g,setVolume:h,videoCurrentTime:O,playing:y,setPlaying:j,togglePlaying:R,canPlay:k,buffering:C,duration:x,availableSubtitles:$,selectedSubtitle:P,setSelectedSubtitle:B,ended:N,startedPlaying:l}},e)};H.displayName="VideoContext";var G=n("7nd9"),Z=n("AN1d"),J=n("LNBt"),Q=n("fDlD"),Y=n("NcBw"),ee=n("Mdqb"),te=n("A6Ww");const ne=["ArrowLeft","ArrowRight","ArrowTop","ArrowDown","PageUp","PageDown"],ae=({visible:e=!0,sizeVariant:t=s.a.desktop,backButtonLabel:n,onShowControls:r,menu:c,subtitleLabel:u,subtitleOffLabel:b,...m})=>{var v;const[p,f]=Object(a.useState)(!1),[g,O]=Object(a.useState)(0),y=Object(U.a)(0),[j,k]=Object(a.useState)(!1),[E,C]=Object(a.useState)(!1),{videoRef:w,fullscreen:x,setFullscreen:L,playing:$,togglePlaying:S,canPlay:P,muted:B,setMuted:N,volume:z,setVolume:T,duration:M,ended:V,setMenuOpen:D,availableSubtitles:F,selectedSubtitle:K,setSelectedSubtitle:q,videoCurrentTime:H}=W(),X=Object(a.useCallback)(e=>{T(e)},[T]);Object(a.useEffect)(()=>{if(e&&!j)return O(H.get()),H.onChange(e=>{O(e)})},[j,H,e]),Object(a.useEffect)(()=>{const e=()=>{const e=null==w?void 0:w.current;if(!e)return[];const t=[];for(let n=0;n<e.buffered.length;n++)t.push([e.buffered.start(n),e.buffered.end(n)]);const n=t.find(([t,n])=>t<=e.currentTime&&n>=e.currentTime),a=Object(G.a)((null==n?void 0:n[1])&&e.duration?n[1]/e.duration:0,0,1);y.set(a)};if(w.current){const t=w.current;return t.addEventListener("timeupdate",e),()=>{t.removeEventListener("timeupdate",e)}}},[w,y]);const ae=Object(a.useCallback)(e=>{switch(e.key){case"ArrowUp":e.preventDefault(),X(Math.min(z+.1,1));break;case"PageUp":e.preventDefault(),X(1);break;case"ArrowDown":e.preventDefault(),X(Math.max(z-.1,0));break;case"PageDown":e.preventDefault(),X(0)}},[X,z]),oe=Object(a.useCallback)(e=>{D(!!e)},[D]),ie=Object(a.useMemo)(()=>{const e=e=>()=>{var t;q(e),(null===(t=null==w?void 0:w.current)||void 0===t?void 0:t.textTracks)&&((e,t)=>{if(e){let n=0;for(const a of e)a.mode=n===t&&""!==a.language?"showing":"disabled",n++}})(w.current.textTracks,e)};return[...c||[],...F.length>0?[{label:u,items:[{label:b,language:"",mode:"hidden",index:-1,active:-1===K,onClick:e(-1)},...F.map(({label:t},n)=>({label:t,active:n===K,onClick:e(n)}))]}]:[]]},[c,F,b,u,K,q,w]),{direction:he,isRTL:Oe}=Object(Y.b)(),ye=Object(a.useMemo)(()=>o.a.createElement(ve,{icon:i.a.menuDotted,size:Z.a.large,variant:l.a.transparent}),[]),je=(null==ie?void 0:ie.length)>0?o.a.createElement(_.a,{ref:oe,key:e?"show":"hide",items:ie,preferredPlacement:Oe?I.a.topRight:I.a.topLeft,backButtonLabel:n},ye):null,ke=o.a.createElement(A.a,{spacing:{mobile:d.b.xSmall,desktop:d.b.medium},orientation:R.a.horizontal}),Ee=Object(a.useCallback)(()=>{L(e=>!e)},[L]),Ce=Object(a.useCallback)(e=>{null==r||r(),k(!0),O(e),V&&S(),w.current&&(O(e),C(!0),H.set(e),w.current.currentTime=e)},[k,r,H,w,V,S]),we=Object(a.useRef)(!1),xe=Object(a.useCallback)(()=>{k(!1)},[]),Le=Object(a.useCallback)(e=>{" "===e.key&&S(),ne.includes(e.key)&&k(!1)},[S]);Object(a.useEffect)(()=>{j&&$&&(we.current=!0,S()),we.current&&!j&&(S(),we.current=!1)},[j,$,S]);const $e=Object(a.useCallback)(e=>{var t;if(ne.includes(e.key)){e.preventDefault(),k(!0);const n=(null===(t=null==w?void 0:w.current)||void 0===t?void 0:t.currentTime)||0;switch(e.key){case"ArrowUp":case"ArrowRight":Ce(n+5);break;case"ArrowDown":case"ArrowLeft":Ce(n-5);break;case"PageUp":Ce(n+60);break;case"PageDown":Ce(n-60)}}},[w,Ce]),Se=Object(a.useCallback)(()=>{N(e=>!e)},[N]),Pe=Object(a.useCallback)(()=>{f(!0)},[f]),Be=Object(a.useCallback)(()=>{f(!1)},[f]),Ne=Object(a.useCallback)(()=>{f(!0)},[f]),ze=Object(a.useCallback)(()=>{f(!1)},[f]),Te=$&&!j&&!E&&P&&0!==g?{animate:!0,animateTransition:{duration:M-g,ease:h.c.linear},value:M}:{value:(null===(v=null==w?void 0:w.current)||void 0===v?void 0:v.currentTime)||0,animate:!1};return Object(a.useEffect)(()=>{if(E){const e=setTimeout(()=>{C(!1)},0);return()=>{clearTimeout(e)}}},[E]),o.a.createElement(re,{sizeVariant:t,visible:e,...m,dir:Q.a.leftToRight,tabIndex:-1},o.a.createElement(le,null),o.a.createElement(ee.a,null,o.a.createElement(ce,{onClick:S,icon:V?i.a.replay:$?i.a.pause:i.a.playFilled,size:Z.a.large,variant:l.a.transparent}),ke,o.a.createElement(pe,null,o.a.createElement(ge,{style:{transformOrigin:0,scaleX:y,translateY:"-50%"}}),o.a.createElement(fe,{min:0,max:M,onInput:Ce,onChange:xe,handleProps:{onKeyUp:Le,onKeyDown:$e},...Te})),ke,t!==s.a.mobile&&!!M&&o.a.createElement(o.a.Fragment,null,o.a.createElement(me,{duration:M},o.a.createElement(te.a,{value:g,background:!1}),!!M&&o.a.createElement(o.a.Fragment,null,o.a.createElement(A.a,{spacing:Object(d.a)(2/16),orientation:R.a.horizontal}),"/",o.a.createElement(A.a,{spacing:Object(d.a)(2/16),orientation:R.a.horizontal}),o.a.createElement(te.a,{value:M,background:!1}))),ke),o.a.createElement(ue,{onMouseEnter:Pe,onMouseLeave:Be,onFocus:Ne,onBlur:ze,onKeyDown:ae},p&&!B&&o.a.createElement(be,{min:0,max:1,value:B?0:z,onChange:X,orientation:R.a.vertical,handleProps:{tabIndex:-1}}),o.a.createElement(de,{onClick:Se,icon:B||0===z?i.a.volumeOff:i.a.volumeOn,size:Z.a.large,variant:l.a.transparent}))),o.a.createElement(J.b,{dir:he},je),o.a.createElement(ee.a,null,o.a.createElement(se,{onClick:Ee,icon:x?i.a.minimize:i.a.maximize,size:Z.a.large,variant:l.a.transparent})))};ae.displayName="VideoControls";var oe=ae;const re=Object(r.a)(J.b)(({theme:e,sizeVariant:t,visible:n})=>u.b`
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    visibility: ${n?"visible":"hidden"};
+    opacity: ${n?1:0};
+    pointer-events: ${n?"auto":"none"};
+    transform: ${n?"none":"translate(0, 30%)"};
+    transition: ${Object(h.e)("opacity",h.c.default,h.a.slow)},
+      ${Object(h.e)("visibility",h.c.default,h.a.slow)},
+      ${Object(h.e)("transform",h.c.default,h.a.slow)};
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    padding: ${e.video.padding[t]};
+  `);re.displayName="Container";const le=r.a.div(({theme:e})=>u.b`
+    background-image: linear-gradient(
+      to bottom,
+      ${e.video.controls.backgroundColor.from},
+      ${e.video.controls.backgroundColor.to}
+    );
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+  `);le.displayName="ControlsBackground";const ie=Object(r.a)(l.b)(({theme:e})=>u.b`
+    color: ${e.video.color};
+
+    &:hover {
+      color: ${e.video.color};
+    }
+  `);ie.displayName="ControlButton";const ce=Object(r.a)(ie)``;ce.displayName="PlayButton";const se=Object(r.a)(ie)``;se.displayName="FullscreenButton";const ue=r.a.div`
+  position: relative;
+`;ue.displayName="SoundControlsContainer";const de=Object(r.a)(ie)``;de.displayName="SoundControlButton";const be=Object(r.a)(D.a)`
+  height: 50px;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -2;
+`;be.displayName="VolumeSlider";const me=r.a.div(({theme:e,duration:t})=>u.b`
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: ${d.b.xxLarge};
+    line-height: ${F.b.body};
+    pointer-events: none;
+    justify-content: center;
+    font-size: ${F.b.body};
+    color: ${e.video.color};
+    white-space: nowrap;
+    max-width: ${t>=3600?"140px":"90px"};
+  `);me.displayName="VideoTimers";const ve=Object(r.a)(ie)``;ve.displayName="VideoMenuButton";const pe=r.a.div`
+  flex: 1;
+  position: relative;
+`,fe=Object(r.a)(D.a)`
+  height: ${d.b.xLarge};
+`;fe.displayName="Seekbar";const ge=Object(r.a)(S.a.div)(({theme:e})=>u.b`
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: ${e.video.bufferBar.backgroundColor};
+  `);ge.displayName="BufferBar";var he=n("SpcV"),Oe=n("u6J/"),ye=n("nsip");const je=Object(a.forwardRef)(({children:e,title:t,controls:n=!0,subtitleLabel:r="Subtitles",subtitleOffLabel:l="Off",backButtonLabel:u="Back to menu",menu:d,endScreenContent:m,endScreenContentFullCanvas:f=!1,actions:h=[],onFocus:O,onBlur:y,onKeyDown:j,onControlsChange:E,onReplay:C,onFullscreenChange:w,onSubtitleChange:x,onClick:$,onTouchEnd:S,containerProps:P,...B},N)=>{const T=!!B.autoPlay,{isKeyboardControlled:R}=Object(L.b)(),[A,D]=Object(a.useState)(!1),[F,_]=Object(a.useState)(!1),I=Object(a.useRef)(null),K=Object(a.useMemo)(()=>B.id||Object(ye.a)("video-"),[B.id]),{playerRef:U,videoRef:q,menuOpen:H,fullscreen:X,playing:G,togglePlaying:Z,canPlay:J,buffering:Q,selectedSubtitle:Y,ended:ee,startedPlaying:te}=W(),[ne,ae]=Object(a.useState)(!1),re=!G&&!te&&!T,le=Object(a.useCallback)(()=>{I.current&&clearTimeout(I.current),D(!0),I.current=setTimeout(()=>{D(!1)},4e3)},[]);Object(a.useEffect)(()=>{!A&&I.current&&clearTimeout(I.current)},[A]);const{focusBlurEvents:ie,focused:ce}=Object(Oe.a)({name:"video-"+K,fakeFocus:H||X,onFocus:()=>{le(),null==O||O()},onBlur:()=>{null==y||y(),v.b?D(!1):le()},onPointerUp:B.onPointerUp,onPointerDown:B.onPointerDown}),se=!ne&&(ee||H)||!ne&&!re&&n&&(A||ce&&R||F),ue=J&&!G&&!te||!te&&G||J&&se&&te,de=te,be=Object(M.a)(N,q),me=Object(a.useCallback)(e=>{var t;null==$||$(e),Z(),null===(t=null==q?void 0:q.current)||void 0===t||t.focus()},[Z,$,q]);Object(a.useEffect)(()=>{(null==q?void 0:q.current)&&ee&&(null==C||C())},[C,ee,q]);const ve=void 0!==m;Object(a.useEffect)(()=>{const e=q.current;!e||!ee||B.autoPlay||B.loop||ve||e.load()},[ee,q,B.loop,ve,B.autoPlay]);const[pe,fe]=Object(V.c)(),ge=Object(M.a)(U,pe),je=Object(a.useMemo)(()=>fe>=c.a.tablet&&fe<c.a.desktop?s.a.tablet:fe>=c.a.desktop?s.a.desktop:s.a.mobile,[fe]);Object(he.a)(()=>{null==w||w(X,q)},[w,X,q]),Object(he.a)(()=>{null==E||E(se)},[E,se]),Object(a.useEffect)(()=>{if((null==q?void 0:q.current)&&"undefined"!=typeof MutationObserver){const e=new MutationObserver(e=>{var t,n;for(const a of e)"attributes"===a.type&&"controls"===a.attributeName&&(p&&(null==q?void 0:q.current)?ae(null===(t=null==q?void 0:q.current)||void 0===t?void 0:t.controls):(null===(n=null==q?void 0:q.current)||void 0===n?void 0:n.controls)&&(q.current.controls=!1))});return e.observe(null==q?void 0:q.current,{attributes:!0}),()=>e.disconnect()}},[ae,q]);const ke=Object(a.useCallback)(()=>{_(!0)},[]),Me=Object(a.useCallback)(()=>{_(!1)},[]),Ve=Object(a.useCallback)(e=>{null==S||S(e),e.preventDefault(),le()},[le,S]),Ae=Object(a.useCallback)(e=>{switch(e.key){case"Escape":X||D(!1);break;case" ":q.current===e.target&&Z()}null==j||j(e)},[j,X,q,Z]);Object(he.a)(()=>{(null==q?void 0:q.current)&&(null==x||x(q.current.textTracks[Y]))},[x,Y,q]);const De=!te||A||m&&ee;return o.a.createElement(Ee,{onMouseMove:le,onMouseEnter:le,onMouseLeave:le,onKeyDown:Ae,ref:ge,showCursor:se||!(te||J)||!n&&!se,fullscreen:X,...J?{"data-ready":!0}:{},...P,...ie},o.a.createElement(Ce,{preload:"auto",...B,tabIndex:!se&&te&&v.b?0:-1,controls:!1,ref:be,onClick:n&&se?me:void 0,onTouchEnd:Ve},e),(te||J)&&o.a.createElement(z,{buffering:G&&!ee&&Q,playing:G}),!J&&Q&&!te&&o.a.createElement(k,{width:"100%",height:"100%"},o.a.createElement(we,null,o.a.createElement(Le,{as:"div",skeleton:!0,"data-type":"skeleton"}),o.a.createElement(xe,{icon:i.a.playFilled,skeleton:!0,size:g.a.xLarge,topOffset:!1}))),m&&ee&&o.a.createElement(Re,{emptyCanvas:f},m),t&&!(ee&&f)&&o.a.createElement($e,{sizeVariant:je},o.a.createElement(Se,{hide:!De}),o.a.createElement(Pe,null,o.a.createElement(Be,{lineClamp:1,visible:De||!1},t),o.a.createElement(ze,{visible:ue,animate:de},o.a.createElement(Te.Provider,{value:{transparent:!re}},h.map((e,t)=>o.a.createElement(a.Fragment,{key:t},e)))))),J&&o.a.createElement(a.Fragment,null,re&&o.a.createElement(we,{onClick:me},o.a.createElement(Le,{type:"button","data-type":"playbutton"}),o.a.createElement(xe,{icon:i.a.playFilled,size:g.a.xLarge,topOffset:!1})),!re&&G&&!J&&o.a.createElement(Ne,{size:b.a.medium,type:b.b.inverted})),o.a.createElement(oe,{"data-type":"videoControls",visible:se,sizeVariant:je,backButtonLabel:u,menu:d,onShowControls:le,subtitleLabel:r,subtitleOffLabel:l,onMouseEnter:ke,onMouseLeave:Me}))});je.displayName="VideoWithoutContext";const ke=Object(a.forwardRef)((e,t)=>o.a.createElement(X,{muted:e.muted,autoPlay:e.autoPlay},o.a.createElement(je,{ref:t,...e})));ke.displayName="Video";t.a=ke;const Ee=r.a.div(({theme:e,fullscreen:t,showCursor:n})=>u.b`
+    width: ${t?"100%":"auto"};
+    position: relative;
+    line-height: 0;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    overflow: hidden;
+    cursor: ${n?"default":"none"};
+    background: ${e.video.backgroundColor};
+
+    /* ensure no blue highlighted overlay is placed on top of the video */
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  `);Ee.displayName="VideoContainer";const Ce=r.a.video`
+  position: relative;
+  flex: 1;
+  z-index: 1;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  outline: none;
+  /* Google Chrome has rounding issues when scaling the video. This can result in a
+  1px black border at the bottom of the player. Upscaling the  video .5% prevents this.  */
+  transform: scale(1.005);
+`;Ce.displayName="StyledVideo";const we=r.a.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    button:first-of-type {
+      transform: scale(0.9);
+    }
+  }
+`;we.displayName="ClickToPlay";const xe=Object(r.a)(g.b)(({theme:e,skeleton:t=!1})=>Object(u.b)(u.b`
+      color: ${t?e.video.initialPlayButton.skeleton.color:e.video.initialPlayButton.color};
+
+      z-index: 150;
+
+      &:hover {
+        color: ${e.video.initialPlayButton.color};
+      }
+    `,t&&u.b`
+        pointer-events: none;
+      `));xe.displayName="PlayIcon";const Le=r.a.button(({theme:e,skeleton:t=!1})=>Object(u.b)(u.b`
+      cursor: pointer;
+      transition: ${Object(h.e)("transform",h.c.easeOut,h.a.fast)};
+      position: absolute;
+      background-color: ${t?e.video.initialPlayButton.skeleton.backgroundColor:e.video.initialPlayButton.backgroundColor};
+      border-radius: 50%;
+      width: ${e.video.initialPlayButton.size};
+      height: ${e.video.initialPlayButton.size};
+      border-width: 0;
+      outline: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      touch-action: manipulation;
+
+      ${Object(x.d)({theme:e})};
+    `,t&&u.b`
+        pointer-events: none;
+      `));Le.displayName="BigPlayButton";const $e=r.a.div(({theme:e,sizeVariant:t})=>u.b`
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 5;
+    padding: ${e.video.padding[t]};
+  `);$e.displayName="TitleContainer";const Se=r.a.div(({theme:e,hide:t=!1})=>u.b`
+    background-image: linear-gradient(
+      to top,
+      ${e.video.title.backgroundColor.from},
+      ${e.video.title.backgroundColor.to}
+    );
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    opacity: ${t?0:1};
+    transition: ${Object(h.e)("opacity",h.c.default,h.a.slow)};
+  `);Se.displayName="TitleBackground";const Pe=r.a.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-grow: 1;
+`;Pe.displayName="TitleContent";const Be=Object(r.a)(m.a)(({theme:e,visible:t})=>u.b`
+    color: ${e.video.title.color};
+    flex-grow: 1;
+    height: 1.25rem;
+    opacity: ${t?1:0};
+    pointer-events: ${t?"auto":"none"};
+    transform: ${t?"none":`translate(0, -${d.b.large})`};
+    transition: ${Object(h.e)("opacity",h.c.default,h.a.slow)},
+      ${Object(h.e)("transform",h.c.default,h.a.slow)};
+  `);Be.displayName="VideoTitle";const Ne=Object(r.a)(b.c)`
+  pointer-events: none;
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`,ze=r.a.div(({visible:e,animate:t})=>u.b`
+      display: flex;
+      flex-direction: row;
+      z-index: 6;
+      opacity: ${e?1:0};
+      transform: ${e?"none":`translate(0, -${d.b.large})`};
+      transition: ${Object(h.e)("opacity",h.c.default,t?h.a.slow:0)},
+        ${Object(h.e)("transform",h.c.default,t?h.a.slow:0)};
+    `);ze.displayName="ActionButtonContainer";const Te=Object(a.createContext)({transparent:!1});Object(a.forwardRef)(({icon:e,...t},n)=>{const{transparent:r}=Object(a.useContext)(Te);return o.a.createElement(Me,null,o.a.createElement($.a,null,o.a.createElement(S.a.div,{key:r?"transparent":"opaque",transition:{duration:h.b.xSlow},initial:{opacity:r?0:1},animate:{opacity:1},exit:{opacity:0,position:"absolute"},style:{marginLeft:d.b.small}},o.a.createElement(Ve,{...t,ref:n,icon:e,variant:r?l.a.transparent:l.a.followTheme,transparent:r}))))}).displayName="VideoActionButton";const Me=r.a.div`
+  position: relative;
+`;Me.displayName="VideoActionButtonContainer";const Ve=Object(r.a)(l.b)(({theme:e,transparent:t})=>{const n=t?e.video.actionButton.transparent:e.video.actionButton;return u.b`
+      color: ${n.states.enabled.labelColor};
+      background-color: ${n.states.enabled.backgroundColor};
+
+      &:hover {
+        color: ${n.states.hover.labelColor};
+        background-color: ${n.states.hover.backgroundColor};
+      }
+    `});Ve.displayName="StyledActionIconButton";const Re=Object(a.forwardRef)(({children:e,...t},n)=>{const[r,l]=Object(a.useState)(!1);return Object(a.useEffect)(()=>{setTimeout(()=>{l(!0)},50)},[]),o.a.createElement(De,{...t,backgroundColorEnabled:r,ref:n},o.a.createElement(Ae,{style:{outline:"3px solid red"}},e))});Re.displayName="VideoEndSlot";const Ae=r.a.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+`;Ae.displayName="VideoEndSlotContent";const De=Object(r.a)("div",Object(y.a)(!1,"backgroundColorEnabled","emptyCanvas"))(({theme:e,backgroundColorEnabled:t,emptyCanvas:n})=>Object(u.b)(u.b`
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        line-height: ${P.b.small};
+        z-index: 1;
+        padding: ${n?d.b.medium:d.b.xxxLarge} ${e.video.padding.mobile}
+          ${Object(d.a)(4.5)} ${e.video.padding.mobile};
+        transition: ${Object(h.e)("background-color",h.c.default,h.a.xSlow)};
+
+        ${B.b.tablet} {
+          padding: ${n?d.b.medium:Object(d.a)(4.5)}
+            ${e.video.padding.tablet} ${Object(d.a)(4.5)}
+            ${e.video.padding.tablet};
+        }
+
+        ${B.b.desktop} {
+          padding: ${n?d.b.xxLarge:Object(d.a)(7.5)}
+            ${e.video.padding.desktop} ${Object(d.a)(7.5)}
+            ${e.video.padding.desktop};
+        }
+      `,t&&u.b`
+          background-color: ${e.video.endScreen.backgroundColor};
+        `));De.displayName="VideoEndContainer"},cZB8:function(e,t,n){"use strict";var a=n("51ZC"),o=n("Rq2L"),r=n("cws1");const l={video:{light:{backgroundColor:a.b.graphiteBlack,skeleton:{backgroundColor:Object(a.d)(a.b.graphiteBlack,.5)},bufferBar:{backgroundColor:Object(a.d)(a.b.white,r.b.low)},padding:{mobile:o.b.medium,tablet:o.b.medium,desktop:o.b.xLarge},color:a.b.white,controls:{backgroundColor:{from:Object(a.d)(a.b.graphiteBlack,r.b.none),to:Object(a.d)(a.b.graphiteBlack,r.b.medium)}},title:{color:a.b.white,backgroundColor:{from:Object(a.d)(a.b.graphiteBlack,r.b.none),to:Object(a.d)(a.b.graphiteBlack,r.b.low)}},initialPlayButton:{color:a.b.safetyOrange,skeleton:{color:Object(a.d)(a.b.graphiteBlack,r.b.low),backgroundColor:Object(a.d)(a.b.white,r.b.medium)},backgroundColor:a.b.white,size:Object(o.a)(5)},menu:{backgroundColor:a.b.white},slider:{handleDotColor:a.b.white,handleCircleColor:Object(a.d)(a.b.white,r.b.xLow),disabledColor:a.b.white,railColor:a.b.white,trackColor:Object(a.d)(a.b.white,r.b.xLow)},endScreen:{backgroundColor:a.b.graphiteBlack},actionButton:{states:{enabled:{labelColor:Object(a.d)(a.b.graphiteBlack,r.b.medium),backgroundColor:a.b.white},hover:{labelColor:a.b.graphiteBlack,backgroundColor:a.b.white}},transparent:{states:{enabled:{labelColor:a.b.white,backgroundColor:a.b.transparent},hover:{labelColor:a.b.white,backgroundColor:a.b.transparent}}}}},dark:{}}};t.a=l}}]);

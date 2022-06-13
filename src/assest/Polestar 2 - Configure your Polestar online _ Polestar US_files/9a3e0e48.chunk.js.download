@@ -1,0 +1,236 @@
+(window.__LOADABLE_LOADED_CHUNKS__=window.__LOADABLE_LOADED_CHUNKS__||[]).push([[4],{"76B5":function(e,t,n){"use strict";var a=n("OTL6");t.a=()=>{const{currentMarket:e,loading:t,error:n}=Object(a.a)();return n?(console.error(n),null):t?null:e}},"9KhC":function(e,t,n){"use strict";n.d(t,"c",(function(){return a})),n.d(t,"a",(function(){return r})),n.d(t,"b",(function(){return o})),n.d(t,"d",(function(){return l}));const a=e=>e.reduce((e,t)=>{let n={label:t.label};return t.label?(t.href&&(n={...n,href:t.href}),t.image&&(n={...n,image:t.image}),t.target&&(n={...n,target:t.target}),t.onClick&&(n={...n,onClick:t.onClick}),t.links&&t.links.length&&(n={...n,links:a(t.links)}),t.items&&t.items.length&&(n={...n,items:a(t.items)}),[...e,n]):e},[]),r=(e,t,n)=>e.map(e=>{let a={...e};return e.href&&!e.onClick&&(a={...a,onClick:r=>{if(e.href){if("ontouchstart"in window&&a.links)return void r.preventDefault();t&&t(r,e.href,n)}}}),e.links&&e.links.length&&(a={...a,links:r(e.links,t,n)}),a}),o=e=>e.map(e=>({label:e.label,items:e.items&&e.items.map(e=>{let t;if(e.target)t={...e,target:"_blank",rel:"noopener"};else{const{target:n,...a}=e;t={...a}}return t})})),l=(e,t)=>e.map(e=>{const n={...e};return n.href?(n.links&&n.links.length&&(n.links=l(n.links,t)),n.items&&n.items.length&&(n.items=l(n.items,t)),{...n,href:t(n.href)}):n})},CT6f:function(e,t,n){"use strict";n.d(t,"a",(function(){return c})),n.d(t,"b",(function(){return u}));var a=n("UYTu"),r=n("+TN3"),o=n("q1tI"),l=n.n(o),i=n("Ty5D");var c,s,u,g=(e="markets")=>`\n  ${e?e+":":""} getMarkets {\n    locale\n    marketName\n    countryCode\n    cmsLocale\n    languageCode\n    languageName\n    region\n    apiRegion\n    dateFormat\n    features\n  }\n`,d=n("foW/"),m=n("eM8V"),b=n("DWl2");!function(e){e.Global="global",e.China="china"}(c||(c={})),function(e){e.NorthAmerica="North America",e.AsiaPacific="Asia-Pacific",e.Europe="Europe",e.MiddleEast="Middle-East"}(s||(s={})),function(e){e.EnableLogin="enableLogin"}(u||(u={}));t.c=e=>{let t,n,o=[],c={loading:!0,error:!1};if(e.availableMarkets)o=e.availableMarkets,c={loading:!1,error:!1};else{const t={};e.client&&(t.client=e.client),e.queryContext&&(t.context=e.queryContext);const{data:n,error:l,loading:i}=Object(r.a)(a.a`{
+  ${g()}
+}`,t);l?(c={error:l.message,loading:!1},o=[]):i||(c={error:!1,loading:!1},o=n.markets)}if(e.currentMarket)t=e.currentMarket,n=e.currentMarket.locale;else{const e=Object(i.h)().pathname;t=Object(d.d)(o,e),n=Object(d.a)(e)}const s={loading:c.loading,error:c.error,currentMarket:t,availableMarkets:o,generateUrl:(e,t={})=>Object(m.a)(e,{locale:n,...t}),getMarketFromLanguage:e=>Object(d.b)(o,e),getMarketFromLocale:e=>Object(d.c)(o,e),getMarketFromLocation:e=>Object(d.d)(o,e),guessMarketFromLanguages:(e=[])=>Object(d.e)(o,e)};return l.a.createElement(b.a.Provider,Object.assign({},e,{value:s}),e.children)}},DWl2:function(e,t,n){"use strict";var a=n("q1tI"),r=n.n(a);const o=()=>{console.warn("Failed to get context. Make sure you wrap your application with <MarketProvider>")},l={getMarketFromLanguage:o,getMarketFromLocale:o,getMarketFromLocation:o,guessMarketFromLanguages:o,generateUrl:o};t.a=r.a.createContext(l)},IU45:function(e,t,n){"use strict";n.d(t,"a",(function(){return L}));var a=n("UYTu"),r=n("+TN3"),o=n("5SEd"),l=n("2nlW"),i=n("ufXH"),c=n("GkzE"),s=n("51ZC"),u=n("TYwc"),g=n("Rq2L"),d=n("q1tI"),m=n.n(d),b=n("CT6f"),f=n("VaSq");const p="\n  \n  label\n  href:url\n\n  image {\n    source:url\n    alternate:alt\n  }\n";var h=(e,t,n="domain",a="global",r="dictionary")=>`\n  ${((e,t,n="domain")=>`${n?n+":":""} ${{[f.c.WWW]:"allWwwNavigationItems",[f.c.ABOUT]:"allAboutNavigationItems",[f.c.LEGAL]:"allLegalNavigationItems"}[t||f.c.WWW]}(locale: ${e}, filter: {parent: {exists: "false"}}) {\n    ${p}\n    links:children {\n      ${p}\n    }\n  }`)(e,t,n)}\n  ${((e,t="global")=>`\n  ${t?t+":":""} allGlobalNavigationItems(locale: ${e}, filter: {parent: {exists: "false"}}) {\n    \n  label\n  href:url\n\n  }\n`)(e,a)}\n  ${((e,t)=>`\n  ${t}: allSharedDictionaries(locale: ${e}, filter: {key: {matches: {pattern: "^Sign in$", caseSensitive: true}}}) {\n    value\n    key\n  }\n`)(e,r)}\n`;var k,O=e=>/[\uac00-\ud7af]|[\u1100-\u11ff]|[\u3130-\u318f]|[\ua960-\ua97f]|[\ud7b0-\ud7ff]/g.test(e),v=n("9KhC"),x=n("76B5");!function(e){e.PRODUCTION="production",e.STAGING="staging",e.DEV="dev"}(k||(k={}));const E=()=>{console.warn("Failed to get context. Make sure you wrap your application with <DomainProvider>")},C={getApplicationByUrl:E,getApplicationIdByUrl:E,isExternalUrl:E};var j=m.a.createContext(C),w=n("Px6T");const $=({quickLinks:e,links:t,shouldRemoveEmptyData:n,onNavigate:a,onNavigateOptions:r,enableLogin:o,loginRedirectUrl:i,loginButtonText:c,...s})=>{var u;let g=t,d=e;const f=s.market||Object(x.a)();if(!f)return console.error("Couldn't determine market, please pass a market via the props or use the MarketProvider"),null;n&&(g=Object(v.c)(g)),a&&(g=Object(v.a)(g,a,r),d&&(d=Object(v.a)(d,a,r)));const p=(void 0!==o?o:!!(null===(u=f.features)||void 0===u?void 0:u.find(e=>e===b.b.EnableLogin)))?m.a.createElement(y,{loginRedirectUrl:i,loginButtonText:c,market:f,profileLink:s.profileLink}):null,h=s.header?s.header:p;return m.a.createElement(l.a,Object.assign({header:h,links:g,quickLinks:d},s))};$.defaultProps={shouldRemoveEmptyData:!0};const L=({onNavigate:e,onNavigateOptions:t,loginRedirectUrl:n,profileLink:o,...l})=>{const i=l.market||Object(x.a)(),c=l.domain||Object(d.useContext)(j).domain;if(!c)return console.error("Couldn't determine domain, please pass a domain via the props or use the DomainProvider"),null;if(!i)return console.error("Couldn't determine market, please pass a market via the props or use the MarketProvider"),null;const s={};l.client&&(s.client=l.client),l.queryContext&&(s.context=l.queryContext);const{cmsLocale:u}=i,{data:g,error:b,loading:f}=Object(r.a)(function(e,t){return a.a`{
+    ${h(e,t,"domain","global","dictionary")}
+  }`}(u,c),s);let p=Object(d.useMemo)(()=>{if(!g||!g.domain||b||f)return;const e=Object(v.c)(g.domain);return l.transformUrl?Object(v.d)(e,l.transformUrl):e},[g]);const k=Object(d.useMemo)(()=>{if(!g||!g.dictionary||b||f)return;const e=g.dictionary.find(e=>"Sign in"===e.key);return e?e.value:void 0},[g]);return p&&(p=Object(v.a)(p,e,t)),b?(console.error(b),null):f?null:g.domain?g.global?m.a.createElement($,Object.assign({shouldRemoveEmptyData:!1,links:p,market:i,quickLinks:g.global,loginButtonText:k,loginRedirectUrl:n,profileLink:o},l)):(console.error("no global navigation items found"),null):(console.error("no domain navigation items found"),null)},y=e=>{const t=e.market||Object(x.a)(),n=e.profileLink||`/${t.locale}/login/profile`,{isAuthenticated:a,login:r,user:o,loadingAuth:l}=Object(w.a)(),{loginButtonText:u}=e,g=Object(d.useCallback)(t=>{e.onNavigate&&e.onNavigate(t,n,e.onNavigateOptions)},[]);if(l)return null;if(!a)return m.a.createElement(T,{onClick:()=>r(e.loginRedirectUrl),leading:m.a.createElement(i.b,{icon:c.a.arrowRight,color:s.b.safetyOrange})},u);if(!o)return null;let b=`${o.firstName} ${o.lastName}`;return O(b)&&(b=`${o.lastName}${o.firstName}`),m.a.createElement(T,{href:n,onClick:g,as:"a",leading:m.a.createElement(i.b,{icon:c.a.arrowRight,color:s.b.safetyOrange}),"data-hj-suppress":!0},b)},T=Object(o.a)(u.a)`
+  padding: ${g.b.xxSmall} 0;
+`},J3Ma:function(e,t,n){"use strict";n.d(t,"a",(function(){return A}));var a=n("UYTu"),r=n("+TN3"),o=n("AeFk"),l=n("5SEd"),i=n("okeJ"),c=n("JbaH"),s=n("zaSQ"),u=n("MDFK"),g=n("AN1d"),d=n("TYwc"),m=n("GkzE"),b=n("51ZC"),f=n("BBA/"),p=n("KRDT"),h=n("gtio"),k=n("Rq2L"),O=n("dMat"),v=n("ZIlh"),x=n("4UL4"),E=n("fV9A"),C=n("q1tI"),j=n.n(C);var w=(e="")=>`\n  ${e?e+":":""} globalMarketSelector {\n    title\n    image {\n      alternative: alt\n      source: url\n    }\n  }\n`,$=n("9KhC"),L=n("eM8V"),y=n("OTL6");const T=e=>({name:t})=>t===e.region,S=(e,t)=>{let n=[];if(!e.some(T(t))){const a={name:t.region,countries:[]};return a.countries.push(t),n=[...e,a],n}const a=e.find(T(t)),r=e.findIndex(T(t));return a?(a.countries.push(t),e[r]=a,e):e},N=a.a`{
+  ${w()}
+}`,D=j.a.forwardRef(({visible:e=!1,onClose:t,...n},a)=>{const r=Object(C.useCallback)(()=>{null==t||t()},[t]);return j.a.createElement(I,{ref:a,open:e,detached:!0,onClose:r},j.a.createElement(P,Object.assign({visible:e,onClose:t},n)))}),A=e=>{const t={};e.client&&(t.client=e.client),e.queryContext&&(t.context=e.queryContext);const{data:n,loading:a,error:o}=Object(r.a)(N,t);return o?(console.error(o),null):a?null:n?j.a.createElement(D,Object.assign({},n.globalMarketSelector,e)):(console.error("no market selector data found"),null)},P=({title:e,markets:t,path:n,paths:a,logoProps:r,visible:o=!1,onClose:l,onNavigate:f,onNavigateOptions:p})=>{e=e||"Select your region";const{availableMarkets:h,loading:k,error:O}=Object(y.a)();!t&&!k&&!O&&(h||[]).length>0&&(t=h);const v=Object(C.useCallback)(e=>{const t=e.map(({marketName:e,locale:t})=>({label:e,locale:t}));return f?Object($.a)(t,f,p):t},[t]);if(!t){if(O)return console.error(O),null;if(k)return null;if(!h||0===h.length)return console.error("Missing markets. Please encapsulate the MarketSelector component with the MarketProvider or pass the markets via props."),null}return j.a.createElement(q,null,j.a.createElement(i.c,null,e&&j.a.createElement(c.a,{span:s.a.full},j.a.createElement("header",null,j.a.createElement(F,null,e),j.a.createElement(u.a,{size:g.a.small}))),j.a.createElement(U,null,t&&t.reduce(S,[]).map(({name:e,countries:t},r)=>j.a.createElement(G,{key:r,span:{mobile:4,desktopWide:3},doubleHeight:t.length>5},e&&j.a.createElement(W,{as:"h2"},e),j.a.createElement("ul",null,v(t).map((e,t)=>j.a.createElement(B,{key:t},j.a.createElement(d.a,{as:"a",tabIndex:o?0:-1,trailing:m.a.arrowRight,iconColor:b.b.safetyOrange,onClick:e.onClick,href:Object(L.b)(e.locale,a&&a[e.locale]||n||"")},(e=>{const[t,n]=e.split(" | ");return j.a.createElement(j.a.Fragment,null,j.a.createElement("span",null,t),!!n&&j.a.createElement(j.a.Fragment,null," ",j.a.createElement("span",null,"(",n,")")))})(e.label)))))))),j.a.createElement(u.a,{size:g.a.medium})),j.a.createElement(_,{id:"test"},l?j.a.createElement(z,{onClick:l,icon:m.a.close,size:g.a.large}):j.a.createElement(R,null,j.a.createElement(M,Object.assign({},r,{size:g.a.medium})))))},I=Object(l.a)(f.a)`
+  /*
+  Set the Dialog "Container" width/height to cover the viewport,
+  this is done instead of using the fullscreen prop since it puts padding on the Dialog parent
+  */
+  min-height: 100vh;
+  min-width: 100vw;
+
+  & > div {
+    /*
+    Set "DialogInner" max-width to none,
+    when the prop "fullscreen" isn't used a max-width is placed on "DialogInner"
+    */
+    max-width: none;
+    padding: 0;
+  }
+`,M=Object(l.a)(p.a)`
+  line-height: 1;
+
+  > span {
+    font-size: 22.3px;
+
+    ${h.b.tablet} {
+      font-size: 26px;
+    }
+  }
+`,R=l.a.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: ${k.b.large};
+  right: 0;
+
+  ${h.b.tablet} {
+    top: ${k.b.xLarge};
+  }
+
+  ${h.b.desktop} {
+    top: ${k.b.xxLarge};
+  }
+`,q=Object(l.a)(O.a)(o.b`
+    position: relative;
+    background-color: white;
+    padding-top: ${k.b.xxxxxLarge};
+
+    ${h.b.tablet} {
+      padding-top: ${k.b.xxxxxLarge};
+    }
+
+    ${h.b.desktop} {
+      padding-top: ${k.b.xxxxxxLarge};
+    }
+  `),U=Object(l.a)(v.b)(o.b`
+  grid-template-rows: repeat(2, 1fr);
+  row-gap: ${k.b.xxxLarge};
+
+  ${h.b.tablet} {
+    grid-auto-flow: column dense;
+  }
+`),G=Object(l.a)(c.a)`
+  grid-row-end: span ${({doubleHeight:e})=>e?2:1};
+`,B=l.a.li(o.b`
+  margin-bottom: ${k.b.medium};
+  cursor: pointer;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+`),F=Object(l.a)(x.a)(o.b`
+  color: ${b.b.stormGrey};
+`),W=Object(l.a)(x.a)(o.b`
+  margin-bottom: ${k.b.large};
+  color: ${b.b.graphiteBlack};
+`),_=Object(l.a)(i.c)(o.b`
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  top: 0;
+  display: flex;
+  justify-content: flex-end;
+`),z=Object(l.a)(E.b)(o.b`
+  position: absolute;
+  top: ${k.b.large};
+  right: 0;
+  padding: 0;
+
+  ${h.b.tablet} {
+    margin-top: ${k.b.xxLarge};
+  }
+`);D.displayName="MarketSelector"},JHRu:function(e,t,n){"use strict";n.d(t,"a",(function(){return j}));var a=n("UYTu"),r=n("+TN3"),o=n("7RfS"),l=n("TYwc"),i=n("pW3v"),c=n("cws1"),s=n("QhtO"),u=n("q1tI"),g=n.n(u),d=n("76B5");var m=n("dPkC"),b=n("bKkW"),f=n("Rq2L"),p=n("SUQ9"),h=n("GkzE");const k=Object(i.a)(b.a)`
+  vertical-align: center;
+  margin-right: ${f.b.xxSmall};
+`,O=({label:e,location:t,onChangeLocationClick:n})=>{const a=Object(o.a)().textButton.sizes.medium.fontSize;return u.createElement(p.a,{crossAxisAlignment:"center"},u.createElement(k,Object.assign({},a),e,":"),u.createElement(l.a,{"aria-label":e,onClick:()=>n(),trailing:h.a.arrowRight},t))};O.defaultProps={label:"Change Location"};var v=O;const x=e=>{const t=Object(o.a)().text.sizes.medium;return g.a.createElement(E,null,g.a.createElement(l.a,Object.assign({as:"a",target:"_blank",href:e.legalUrl},t),e.children))},E=i.a.div`
+  opacity: ${c.b.full};
+`;function C({onChangeLocationClick:e,changeLocationText:t,location:n,copyrightText:a,showChatPlaceholder:r=m.a.NONE,...o}){const l=o.legalText&&o.legalUrl?()=>g.a.createElement(x,{legalUrl:o.legalUrl},o.legalText):void 0,i=o.hideMarketSelector?void 0:()=>g.a.createElement(g.a.Fragment,null,t&&n&&"function"==typeof e&&g.a.createElement(v,Object.assign({label:t,location:n,onChangeLocationClick:e},o)));return g.a.createElement(g.a.Fragment,null,g.a.createElement(m.b,{showChatPlaceholder:r===m.a.FOOTER}),g.a.createElement(s.a,Object.assign({},o,{as:"footer",copyrightText:a,legal:l,marketSelector:i})))}const j=({showChatPlaceholder:e,...t})=>{const n=t.market||Object(d.a)();if(!n)return console.error("Couldn't determine market, please pass a market via the props or use the MarketProvider"),null;const o={};t.client&&(o.client=t.client),t.queryContext&&(o.context=t.queryContext);const{cmsLocale:l,marketName:i}=n,{data:c,error:s,loading:m}=Object(r.a)((b=l,a.a`{
+  ${((e,t="",n="")=>`\n  ${((e,t)=>`\n  ${t?t+":":""} globalFooter(locale: ${e}) {\n    legalText\n    copyright\n    legalUrl\n  }\n`)(e,t)}\n  ${((e,t)=>`\n  ${t?t+":":""} sharedDictionary(locale: ${e}, filter: {key: {matches: {pattern: "Change Location"}}}) {\n    changeLocation: value\n  }\n`)(e,n)}\n`)(b)}
+}`),o);var b;const f=Object(u.useMemo)(()=>{if(c&&!s&&!m)return{...c.sharedDictionary,...c.globalFooter}},[c,s,m]);return s?(console.error(s),null):m?null:f?g.a.createElement(C,Object.assign({showChatPlaceholder:e,copyrightText:f.copyright,changeLocationText:f.changeLocation,legalText:f.legalText,legalUrl:f.legalUrl,location:i},t)):(console.error("no footer data found"),null)}},OTL6:function(e,t,n){"use strict";var a=n("q1tI"),r=n("DWl2");t.a=()=>Object(a.useContext)(r.a)},Px6T:function(e,t,n){"use strict";var a=n("q1tI"),r=n("a8ui");t.a=()=>Object(a.useContext)(r.a)},VaSq:function(e,t,n){"use strict";var a,r,o;n.d(t,"b",(function(){return r})),n.d(t,"a",(function(){return o})),function(e){e.WWW="www",e.ABOUT="about",e.LEGAL="legal"}(a||(a={})),function(e){e.PLAYGROUND="localhost",e.DEV="dev.polestar.com",e.STAGING="staging.polestar.com",e.PROD="www.polestar.com",e.ALL=".polestar.com"}(r||(r={})),function(e){e.PLAYGROUND="https://staging.polestar.com",e.DEV="https://dev.polestar.com",e.STAGING="https://staging.polestar.com",e.PROD="https://polestar.com"}(o||(o={})),t.c=a},WTOx:function(e,t,n){"use strict";var a=n("Lm/n"),r=n("q1tI"),o=n.n(r),l=n("UYTu");var i=l.a`
+  query getConsumer {
+    getConsumer {
+      salesforceId
+      firstName
+      lastName
+      email
+      birthdate
+      mobilePhone
+      country
+      countryCode
+      city
+      zipCode
+      streetAddress
+      language: preferredLanguage
+      state
+      additionalCustomerIds {
+        id
+        code
+      }
+      hasOptedOutOfEmail
+      optInDate
+      optOutDate
+      customerType
+      username
+      gtmId
+    }
+  }
+`;var c=l.a`
+  query introspectToken($token: String!) {
+    introspectToken(token: $token) {
+      active
+    }
+  }
+`;var s=l.a`
+  query refreshAuthToken($token: String!) {
+    refreshAuthToken(token: $token) {
+      access_token
+      expires_in
+    }
+  }
+`,u=n("d9Xo"),g=n("VaSq");const d={PLAYGROUND:{cookie:g.b.PLAYGROUND,login:g.a.PLAYGROUND},DEV:{cookie:g.b.DEV,login:g.a.DEV},STAGING:{cookie:g.b.STAGING,login:g.a.STAGING},PROD:{cookie:g.b.PROD,login:g.a.PROD},ALL:{cookie:g.b.ALL,login:g.a.PROD}},m=(e,t)=>t.split(".").reduce((e,t)=>e&&e[t]?e[t]:void 0,e),b=e=>e?60*e*1e3:0;var f=(e,t)=>{const n=Object(r.useRef)();Object(r.useEffect)(()=>{n.current=e},[e]),Object(r.useEffect)(()=>{if(null!==t){const e=setInterval((function(){n&&n.current()}),t);return()=>clearInterval(e)}},[t])},p=n("OTL6"),h=n("a8ui");var k=({config:e,children:t,...n})=>{const[l,k]=Object(r.useState)(!1),[O,v]=Object(r.useState)(),[x,E]=Object(r.useState)(),[C,j]=Object(r.useState)(!0),[w,$]=Object(r.useState)(!0),{currentMarket:L}=Object(p.a)(),y=(T=e.stage&&e.stage.toUpperCase())?d[T].cookie:g.b.ALL;var T;const S=(e=>e?d[e].login:g.a.PROD)(e.stage&&e.stage.toUpperCase()),[N]=Object(a.a)(i,{client:e.client,context:e.queryContext,fetchPolicy:"no-cache",onCompleted(e){const t=m(e,"getConsumer");t&&v(t),sessionStorage.setItem("user",JSON.stringify(t))}}),D=()=>{const e=sessionStorage.getItem("impersonation.id_token"),t=Object(u.a)("impersonation_id");return Boolean(t&&e)},[A]=Object(a.a)(s,{client:e.client,context:e.queryContext,fetchPolicy:"no-cache",onCompleted(e){(e=>{if(e&&e.access_token){const t=new Date,n=new Date(t.getTime()+(1e3*e.expires_in-b(30))),a={...x||{},...e,expireDate:n.getTime()};k(!0),E(a),Object(u.b)("token",a,{expiration:a.expires_in,domain:y})}else E(void 0),k(!1)})(m(e,"refreshAuthToken"))}}),[P,{loading:I}]=Object(a.a)(c,{client:e.client,context:e.queryContext,fetchPolicy:"no-cache",onCompleted(e){var t;const n=m(e,"introspectToken.active");k(!!n),!n&&E(void 0);const a=null===(t=Object(u.a)("token"))||void 0===t?void 0:t.refresh_token;!n&&a&&A({variables:{token:a}}),n&&(()=>{const e=sessionStorage.getItem("user");if(e)try{v(JSON.parse(e))}catch(e){console.error("Failed to parse user.")}else N()})()}}),M=e=>{"clearPreviousSessions"===e.key&&"true"===e.newValue&&(E(void 0),sessionStorage.removeItem("user"),v(void 0),k(!1))};f(()=>{(e=>{const t=new Date;(null==e?void 0:e.refresh_token)&&e.expireDate<t.getTime()&&(null==e?void 0:e.refresh_token)&&A({variables:{token:e.refresh_token}});const n=sessionStorage.getItem("impersonation.id_token.claims");if(n&&D()){const e=JSON.parse(n);new Date(1e3*e.exp)<t&&(location.href=`${S}/${(null==L?void 0:L.locale)||"uk"}/login/admin`)}})(x)},b(2)),Object(r.useEffect)(()=>{j(I||w)},[w,I]),Object(r.useEffect)(()=>{window.addEventListener("storage",M);const e=Object(u.a)("token");return D()?(k(!0),N()):e&&(E(e),P({variables:{token:e.access_token}})),$(!1),()=>{window.removeEventListener("storage",M)}},[]),Object(r.useEffect)(()=>{O&&O.gtmId&&(window.dataLayer=window.dataLayer||[],window.dataLayer.push({userID:O.gtmId}))},[O]);return o.a.createElement(h.a.Provider,Object.assign({},n,{value:{isAuthenticated:l,user:O,login:e=>{let t=(e=>{if(!e){return location.host.match(/^(\w+\.)?polestar.com$/g)?location.href:`${location.pathname}${location.search}`}try{const t=new URL(e);if(t.pathname.startsWith("//"))return"/";return t.host.match(/^(\w+\.)?polestar.com$/g)?e:`${t.pathname}${t.search}`}catch(t){return e.indexOf("://")>0||e.startsWith("//")?"/":e}})(e);t.startsWith("//")&&(t="/"),location.href=`${S}/${(null==L?void 0:L.locale)||"uk"}/auth/login?to=${t}`},logout:()=>{location.href=`${S}/${(null==L?void 0:L.locale)||"uk"}/auth/logout`},getConsumer:N,loadingAuth:C}}),t)};t.a=k},Yv0S:function(e,t,n){"use strict";n.d(t,"a",(function(){return N}));var a=n("UYTu"),r=n("+TN3"),o=n("okeJ"),l=n("JbaH"),i=n("4UL4"),c=n("G2bx"),s=n("rAqL"),u=n("Rq2L"),g=n("AN1d"),d=n("IAMl"),m=n("Z3wb"),b=n("GkzE"),f=n("Sc1v"),p=n("pW3v"),h=n("gtio"),k=n("ZIlh"),O=n("/Chg"),v=n("MlsX"),x=n("q1tI");var E=(e,t="")=>`\n  ${t?t+":":""} globalErrorPage (locale: ${e}) {\n    title\n    message\n    buttonLabel:linkText\n    image {\n      url\n      alt\n    }\n  }\n`,C=n("76B5");const j=x.forwardRef((e,t)=>{const{title:n,message:a,image:r,buttonLabel:p,buttonProps:h}=e;return x.createElement(w,null,x.createElement(o.c,null,x.createElement($,null,x.createElement(l.a,{span:{mobile:4}},x.createElement(L,{mainAxisAlignment:"center",stretch:!0},x.createElement(i.a,null,n),x.createElement(c.a,{orientation:s.a.vertical,spacing:u.b.large}),x.createElement(T,{size:g.a.medium},a),x.createElement(c.a,{orientation:s.a.vertical,spacing:u.b.xLarge}),x.createElement(y,null,x.createElement(d.a,Object.assign({variant:m.a.black,trailing:b.a.arrowRight},h),p)))),x.createElement(l.a,{span:{desktop:8,tablet:8,mobile:4}},x.createElement(L,{mainAxisAlignment:"center",stretch:!0},x.createElement(S,null,x.createElement(f.a,{alternative:r.alt,source:r.url,showLoadingState:!1})))))))}),w=p.a.div`
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+
+  padding-top: ${u.b.xxxLarge};
+  padding-bottom: ${u.b.xxxLarge};
+
+  ${h.b.tablet} {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+`,$=Object(p.a)(k.b)`
+  display: block;
+
+  ${h.b.tablet} {
+    display: grid;
+  }
+`,L=Object(p.a)(O.a)`
+  ${h.b.tablet} {
+    height: 100%;
+  }
+`,y=p.a.div`
+  display: inline-block;
+`,T=Object(p.a)(v.a)`
+  white-space: pre-wrap;
+`,S=p.a.div`
+  margin-top: ${u.b.xxLarge};
+  margin-left: -${u.b.large};
+  margin-right: -${u.b.large};
+
+  ${h.b.tablet} {
+    margin-top: 0;
+    margin-left: -${u.b.xxLarge};
+    margin-right: -${u.b.xxLarge};
+  }
+  ${h.b.desktop} {
+    margin-left: 0;
+    margin-right: -${u.b.xxxxLarge};
+  }
+`,N=e=>{const t=e.market||Object(C.a)();if(!t)return console.error("Couldn't determine market, please pass a market via the props or use the MarketProvider"),null;const n={};e.client&&(n.client=e.client),e.queryContext&&(n.context=e.queryContext);const{cmsLocale:o}=t,{data:l,error:i,loading:c}=Object(r.a)((s=o,a.a`{
+  ${E(s,"errorPageData")}
+}`),n);var s;return i?(console.error(i),null):c?null:l.errorPageData?x.createElement(j,Object.assign({},l.errorPageData,{buttonProps:e.buttonProps})):(console.error('no "error page" data found'),null)};j.displayName="Error",N.displayName="ConnectedError"},ZywS:function(e,t,n){"use strict";var a=n("q1tI"),r=n("o+TG");t.a=()=>Object(a.useContext)(r.a)},a8ui:function(e,t,n){"use strict";var a=n("q1tI"),r=n.n(a);t.a=r.a.createContext({isAuthenticated:!1,user:{firstName:"",lastName:"",username:"",city:"",country:"",email:"",mobilePhone:"",streetAddress:"",zipCode:"",additionalCustomerIds:[],birthdate:"",careOf:"",companyName:"",countryCode:"",language:"",orgNo:"",vatNo:"",gtmId:""},login:()=>{},logout:()=>{},getConsumer:()=>{},loadingAuth:!0})},cNKY:function(e,t,n){"use strict";var a=n("o+TG");t.a=a.b},clnF:function(e,t,n){"use strict";var a=n("CT6f");t.a=a.c},d9Xo:function(e,t,n){"use strict";(function(e){n.d(t,"a",(function(){return o})),n.d(t,"b",(function(){return l}));const a=t=>"undefined"!=typeof window?window.btoa(t):e.from(t).toString("base64"),r=t=>"undefined"!=typeof window?window.atob(t):e.from(t,"base64").toString("binary"),o=e=>{if("undefined"==typeof document)return;const t=document.cookie.split(";").find(t=>t.trim().startsWith(e))||"";let n="";if(t){const o=t.split(e+"=")[1];let l="";(e=>{try{return a(r(e))===e}catch(e){return!1}})(o)&&(l=r(o));try{n=JSON.parse(l)}catch(e){n=o}}return n},l=(e,t,n)=>{let r=`${e}=${"object"==typeof t?a(JSON.stringify(t)):t};path=/`;n&&n.expiration&&(r+="; max-age="+n.expiration),n&&n.domain&&(r+="; domain="+n.domain),document.cookie=r}}).call(this,n("HDXh").Buffer)},dPkC:function(e,t,n){"use strict";n.d(t,"a",(function(){return d}));var a=n("BRCj"),r=n("pW3v"),o=n("q1tI"),l=n.n(o),i=n("AeFk"),c=n("Rq2L"),s=n("cws1"),u=n("X/xB");const g=r.a.div(({show:e})=>i.b`
+    line-height: inherit;
+    font-size: inherit;
+    display: block;
+    box-shadow: 0 -${c.b.small} ${c.b.large} 0 rgba(0, 0, 0, ${Object(s.a)(.04)});
+    transition: ${Object(u.e)("transform")}, ${Object(u.e)("opacity")};
+    transform: translateY(${e?0:"100%"});
+    opacity: ${e?s.b.full:s.b.none};
+  `);var d,m=({children:e,className:t,show:n})=>{const[a,r]=l.a.useState(!1);return l.a.useEffect(()=>{setTimeout(()=>{r(!0)},1e3)},[]),l.a.createElement(g,{show:a&&n,className:t},e)};!function(e){e.NONE="NONE",e.FOOTER="FOOTER",e.DOORMAT="DOORMAT",e.BOTH="BOTH"}(d||(d={}));const b=Object(r.a)(m)`
+  position: fixed;
+  z-index: 2;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+`,f=r.a.div`
+  pointer-events: ${e=>e.isInView?"none":"auto"};
+`;t.b=({showChatPlaceholder:e,isInView:t=!1})=>{const[n,r]=Object(o.useState)(!1);return e?l.a.createElement(l.a.Fragment,null,l.a.createElement(b,{show:!(n||t)},l.a.createElement(f,{isInView:n||t,id:"chat-btn-placeholder"})),l.a.createElement(a.a,{onEnter:()=>r(!0),onLeave:()=>r(!1)},l.a.createElement(l.a.Fragment,null))):null}},eM8V:function(e,t,n){"use strict";n.d(t,"a",(function(){return a})),n.d(t,"b",(function(){return r}));n("ac0Q");const a=(e,t={})=>Object.keys(t).reduce((e,n)=>e.replace(new RegExp(":"+n,"gi"),t[n]),e),r=(e,t)=>(t.length&&(t=t.replace(/^\/(\w\w(?:-\w\w)?)(?:\/|$)/,"")),((...e)=>{const t=(e=e.map(e=>{if(e)return"/"===e[0]&&(e=e.substr(1)),"/"===e[e.length-1]&&(e=e.slice(0,-1)),e}).filter(Boolean)).join("/")+"/";return 0===t.indexOf("http")?t:"/"+t})(e,t))},"foW/":function(e,t,n){"use strict";n.d(t,"a",(function(){return a})),n.d(t,"b",(function(){return r})),n.d(t,"c",(function(){return o})),n.d(t,"d",(function(){return l})),n.d(t,"e",(function(){return i}));const a=(e="")=>{const t=new RegExp("/([^/]+)","gi").exec(e);return t&&t.length>0?t[1]:""},r=(e,t="")=>e.find(e=>e.languageCode===t)||null,o=(e,t="")=>e.find(e=>e.locale===t)||null,l=(e,t="")=>o(e,a(t)),i=(e,t=[])=>{let n=null;return t.map(e=>e.toLowerCase()).find(t=>(n=e.find(e=>e.locale.toLowerCase()===t),n||(n=e.find(e=>`${e.languageCode.toLowerCase()}-${e.countryCode.toLowerCase()}`===t),n||(n=e.find(e=>e.languageCode.toLowerCase()===t))),null!==n)),n||null}},gBXD:function(e,t,n){"use strict";var a=n("lW6c"),r=n("gtzJ"),o=n("q1tI"),l=n.n(o);class i extends l.a.Component{constructor(e){super(e),this.state={error:null,eventId:null}}static getDerivedStateFromError(e){return{error:e}}componentDidCatch(e,t){const{shouldReportToSentry:n}=this.props;if(n&&a.b().getClient()){r.b(e=>{e.setExtra("componentStack",t.componentStack)});const n=r.a(e);this.setState({eventId:n})}}render(){const{children:e,isTransparent:t}=this.props,{error:n}=this.state;return n&&t?null:e}}i.defaultProps={isTransparent:!1,shouldReportToSentry:!0},t.a=i},gqCp:function(e,t,n){"use strict";n.d(t,"a",(function(){return w}));var a=n("UYTu"),r=n("+TN3"),o=n("7ypY"),l=n("BRCj"),i=n("GkzE"),c=n("pW3v"),s=n("4UL4"),u=n("Rq2L"),g=n("gtio"),d=n("MlsX"),m=n("IAMl"),b=n("q1tI"),f=n.n(b);var p=(e,t="")=>`\n  ${t?t+":":""} allGlobalDoormatColumns(locale: ${e}) {\n    label\n    items {\n      label\n      href\n      target\n    }\n  }\n  ${t?t+":":""} globalDoormatNewsletterSignup(locale: ${e}) {\n    title\n    body\n    buttonLabel\n    buttonUrl\n  }\n`,h=n("9KhC"),k=n("76B5"),O=n("dPkC");function v({onNavigate:e,listGroups:t,onNavigateOptions:n,fromConnected:a,newsletterSignup:r,showChatPlaceholder:i=O.a.BOTH}){let c=t;a||(c=Object(h.c)(t),c=Object(h.b)(c)),e&&(c=c.map(t=>({...t,items:Object(h.a)(t.items,e,n)})));const[s,u]=Object(b.useState)(!1);return f.a.createElement(f.a.Fragment,null,f.a.createElement(O.b,{showChatPlaceholder:!![O.a.BOTH,O.a.DOORMAT].includes(i),isInView:s}),f.a.createElement(o.a,{listGroups:c,content:r&&f.a.createElement(x,Object.assign({},r))}),i===O.a.BOTH&&f.a.createElement(l.a,{onEnter:()=>u(!0),onLeave:()=>u(!1)},f.a.createElement(f.a.Fragment,null)))}const x=({title:e,body:t,buttonLabel:n,buttonUrl:a,onButtonClick:r,...o})=>f.a.createElement(b.Fragment,null,f.a.createElement(E,null,e),f.a.createElement(C,null,t),f.a.createElement(j,{href:`${a}?redirect-url=${o.redirectUrl||location.href}`,onClick:r,trailing:i.a.arrowRight,as:"a"},n)),E=Object(c.a)(s.a)`
+  margin-top: ${u.b.xLarge};
+  margin-bottom: ${u.b.medium};
+
+  ${g.b.desktop} {
+    margin-top: 0;
+  }
+`,C=Object(c.a)(d.a)`
+  margin-bottom: ${u.b.large};
+`,j=Object(c.a)(m.a)`
+  width: 100%;
+  margin-bottom: ${u.b.xLarge};
+
+  ${g.b.tablet} {
+    width: initial;
+  }
+
+  ${g.b.desktop} {
+    margin-bottom: 0;
+  }
+`,w=({newsletterSignup:e,showChatPlaceholder:t,...n})=>{const o=n.market||Object(k.a)();if(!o)return console.error("Couldn't determine market, please pass a market via the props or use the MarketProvider"),null;const l={};n.client&&(l.client=n.client),n.queryContext&&(l.context=n.queryContext);const{cmsLocale:i}=o,{data:c,error:s,loading:u}=Object(r.a)((g=i,a.a`{
+  ${p(g)}
+}`),l);var g;const d=Object(b.useMemo)(()=>{if(c&&!s&&!u)return Object(h.c)(c.allGlobalDoormatColumns)},[c]),m=Object(b.useMemo)(()=>{if(d)return Object(h.b)(d)},[d]),O=!1===e?void 0:(null==c?void 0:c.globalDoormatNewsletterSignup)&&{...c.globalDoormatNewsletterSignup,...e};return s?(console.error(s),null):u?null:c.allGlobalDoormatColumns?f.a.createElement(v,{fromConnected:!0,listGroups:m,newsletterSignup:O,showChatPlaceholder:t}):(console.error("No doormat column data found"),null)}},njdX:function(e,t,n){"use strict";var a=n("q1tI"),r=n.n(a),o=n("Ty5D");const l=(e,t,n={})=>{const a=e.find(e=>e.name===t);if(!a)throw new Error(`Cannot build URL for unknown route ${t}.`);return Object.keys(n).reduce((e,t)=>e.replace(new RegExp(":"+t,"gi"),n[t]),a.path)};var i=n("OTL6"),c=n("buVf"),s=n("Px6T"),u=n("+TN3"),g=n("/Chg"),d=n("okeJ"),m=n("G2bx"),b=n("Rq2L"),f=n("4UL4"),p=n("TYwc"),h=n("ufXH"),k=n("GkzE"),O=n("AN1d"),v=n("51ZC");var x=n("UYTu").a`
+  query GetDictionary($locale: SiteLocale, $filterPattern: [String]) {
+    allSharedDictionaries(locale: $locale, filter: { key: { in: $filterPattern } }) {
+      id
+      key
+      value
+    }
+  }
+`,E=n("CT6f");const C=(e,t)=>{if(!t&&!e)return"";if(!e)return"";if(!t)return e;const n=t.filter(({key:t})=>t===e);return n.length&&n[0].value?n[0].value:e},j=({staticContext:e})=>{const{currentMarket:t}=Object(i.a)(),{login:n}=Object(s.a)(),[o,l]=Object(a.useState)({}),{loading:j}=Object(u.a)(x,{variables:{locale:t?t.cmsLocale:"en",filterPattern:["You must be logged in to access this page","Sign in"]},context:{dato:!0},onCompleted(e){l({accessText:""+C("You must be logged in to access this page",e.allSharedDictionaries),signInText:C("Sign in",e.allSharedDictionaries)})}});if(e&&(e.statusCode=401),j)return r.a.createElement(c.c,null);const w=(e=>{var t;if(!e)return!1;return(null===(t=e.features)||void 0===t?void 0:t.includes(E.b.EnableLogin))||["fr-be","nl-be","de","nl","no","de-ch","fr-ch","it-ch","se","uk","en-ca","fr-ca","us","zh-cn","fi","at","dk"].includes(e.locale||"")})(t);return r.a.createElement(g.a,{stretch:!0},r.a.createElement(d.c,null,r.a.createElement(m.a,{spacing:b.b.xxLarge}),r.a.createElement(f.a,null,o.accessText),r.a.createElement(m.a,{spacing:b.b.small}),w&&r.a.createElement(p.a,{trailing:r.a.createElement(h.b,{icon:k.a.arrowRight,size:O.a.small,color:v.b.safetyOrange}),onClick:()=>n()},o.signInText),r.a.createElement(m.a,{spacing:b.b.xxLarge})))};j.defaultProps={staticContext:{}};var w=j;var $=({redirectTo:e,...t})=>{const{isAuthenticated:n,loadingAuth:a}=Object(s.a)();return n?r.a.createElement(o.b,Object.assign({},t)):a?r.a.createElement(c.c,{size:c.a.medium}):e?r.a.createElement(o.a,{to:e}):r.a.createElement(w,null)},L=n("foW/");t.a=({routes:e,getView:t,getNotFoundView:n})=>{const{currentMarket:a,availableMarkets:c,loading:s,error:u}=Object(i.a)();if(!a){if(u)return console.error(u),null;if(s)return null}return r.a.createElement(o.d,null,e.map(e=>{const l=e.private?$:o.b;return r.a.createElement(l,{key:"view."+e.name,exact:e.exact,path:e.path,render:r=>a?t(e,r):n(e,r)})}),r.a.createElement(o.b,{exact:!0,path:"/",render:()=>{const t="undefined"!=typeof navigator&&Object(L.e)(c,[...navigator.languages]),n=t?t.locale:"se";return r.a.createElement(o.a,{to:l(e,"home",{locale:n})})}}),r.a.createElement(o.b,{render:e=>n(null,e)}))}},"o+TG":function(e,t,n){"use strict";n.d(t,"a",(function(){return o}));var a=n("q1tI"),r=n.n(a);const o=Object(a.createContext)({visible:!1,onOpen:()=>{},onClose:()=>{},onToggle:()=>{}});o.Consumer;t.b=e=>{const[t,n]=Object(a.useState)(!1),l=Object(a.useCallback)(()=>n(!0),[]),i=Object(a.useCallback)(()=>n(!1),[]),c=Object(a.useCallback)(()=>n(!t),[t]),s={visible:t,onOpen:l,onClose:i,onToggle:c};return r.a.createElement(o.Provider,Object.assign({},e,{value:s}))}}}]);

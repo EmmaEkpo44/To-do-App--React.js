@@ -1,0 +1,11 @@
+
+#img-box{
+    margin-top:-100px
+  }
+  
+  @media (max-width:950px) {
+    #img-box{
+      display: none;
+    }
+    
+  }

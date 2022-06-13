@@ -1,0 +1,185 @@
+(window.__LOADABLE_LOADED_CHUNKS__=window.__LOADABLE_LOADED_CHUNKS__||[]).push([[14],{"2nlW":function(e,t,a){"use strict";var n=a("q1tI"),i=a.n(n),o=a("5SEd"),l=a("cws1"),r=a("Sc1v"),c=a("Rq2L"),s=a("siue"),d=a("AeFk"),m=a("GkzE"),u=a("2kWF"),b=a("51ZC"),g=a("ToaA"),p=a("QKdN"),v=a("GXEE"),h=a("mBtZ"),x=a("F8Mn");const k=()=>{const{queryMatches:e}=Object(x.a)();return e.mobile},f=(e,t)=>(t.y-e.y)/(t.x-e.x),y=(e,t="nav")=>e&&e.length?e.map(({links:e,...a},n)=>({...a,index:n,path:`${t}.${n}`,...e?{links:y(e,`${t}.${n}`)}:{}})):e,O=(e,t)=>{var a,n;return null===(n=null===(a=t[e])||void 0===a?void 0:a.current)||void 0===n||n.focus(),e},w=e=>e?e.split(".").slice(0,-1).join("."):null;var j=a("6mU5");const C=Object(n.memo)(({links:e,...t})=>{const[a,o]=Object(n.useState)([]),[l,r]=Object(n.useState)(0),c=Object(n.useCallback)(e=>{e.stopPropagation(),"ArrowDown"===e.key?r(e=>{const t=e+2;return a.length-t<=0?O(t%2==1?0:1,a):O(t,a)}):"ArrowUp"===e.key&&r(e=>{const t=e-2;return O(t<0?Math.abs(t)%2==1?a.length-(a.length%2==0?2:1):a.length-(a.length%2==0?1:2):e-2,a)})},[a]);return Object(n.useEffect)(()=>{const t=[];e.map(()=>{t.push(Object(n.createRef)())}),o(t)},[e]),i.a.createElement($,{...t,onKeyDown:c},e.map(({label:e,...t},n)=>i.a.createElement(D,{key:n},i.a.createElement(L,{...t,ref:a[n],tabIndex:l===n?0:-1},e))))});C.displayName="QuickLinkNavigation";var E=C;const $=o.a.div(({theme:e})=>d.b`
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+    max-width: 320px;
+
+    ${Object(v.a)({padding:e.navigationDrawer.quickLinks.spacing})}
+
+    ${h.e};
+  `),D=o.a.div`
+  width: 50%;
+  min-width: 100px; // "Polestar.com" fits in a 50% column
+  margin-top: ${({theme:e})=>e.navigationDrawer.quickLinks.link.marginTop};
+  flex-shrink: 0;
+  flex-grow: 0;
+`,L=Object(o.a)(p.a)(e=>{const t=e.theme.link.states;return Object(d.b)(d.b`
+      color: ${t.enabled.textColor};
+      text-decoration: none;
+      display: block;
+      cursor: pointer;
+      margin-right: ${c.b.xSmall};
+      white-space: nowrap;
+      position: relative;
+
+      &:hover {
+        color: ${t.hover.textColor};
+      }
+
+      &:active,
+      &:focus {
+        color: ${t.active.textColor};
+      }
+    `,j.b)});var T=a("ufXH"),N=a("SH6K");const S=Object(n.memo)(({links:e,linkRef:t,setColumn:a,index:n,activePaths:o,onKeyDown:l,currentFocusPath:r,...c})=>{const s=k();return e&&0!==e.length?i.a.createElement(M,{...c,onKeyDown:l},e.map((e,l)=>i.a.createElement(I,{key:e.path,linkRef:t,...e,setColumn:a,index:n,triggerOnMouseEnter:!s,active:!!e.path&&o.indexOf(e.path)>-1,tabIndex:r===e.path||!r&&0===l?0:-1}))):null});S.displayName="NavigationList";var A=S;const M=o.a.nav`
+  flex: 1;
+
+  ${Object(v.a)({marginTop:{mobile:c.b.medium,desktopWide:c.b.xLarge}})}
+`,I=Object(n.memo)(Object(n.forwardRef)(({label:e="",index:t=0,path:a,linkRef:o,setColumn:l,onClick:r,triggerOnMouseEnter:s,active:d=!1,tabIndex:u=-1,...b},g)=>{const p=Object(n.useCallback)(()=>{l(t+1,{...b,path:a})},[l,t,b,a]),v=Object(n.useCallback)(()=>{s&&p()},[s,p]),h=Object(n.useCallback)(e=>{!s&&b.links&&(e.preventDefault(),p()),r&&r(e)},[s,p,r,b.links]),x=b.links&&b.links.length>0,k=Object(n.useCallback)(e=>{null==o||o(e,a)},[o,a]),f=Object(N.a)(g,k);return i.a.createElement(H,{ref:f,...b,href:b.href||"",hideUnderline:!0,active:d,onClick:h,onMouseEnter:v,tabIndex:u},i.a.createElement("span",null,e),x&&i.a.createElement(W,{icon:m.a.chevronRight,size:c.b.medium}))}));I.displayName="NavigationLink";const H=Object(o.a)(p.a)(({theme:e,active:t})=>{const a=e.link.states;return d.b`
+    text-decoration: none;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: space-between;
+    height: auto;
+
+    span {
+      color: ${t?e.navigationDrawer.activeLinkColor:a.enabled.textColor};
+    }
+
+    ${Object(v.a)(e.navigationDrawer.navigationList.link)}
+
+    ${Object(h.d)({theme:e})};
+  `}),W=Object(o.a)(T.b)(({theme:e})=>d.b`
+    text-align: center;
+
+    ${Object(v.a)(e.navigationDrawer.navigationList.icon)}
+  `);var B=a("dMat"),R=a("n2Mo"),P=a("fV9A"),q=a("AN1d"),z=a("Gh92"),K=a("gtio"),X=a("488y"),_=a("X/xB"),F=a("eEGE"),G=a("M4ns"),U=a("8PNI");const Z=Object(n.memo)(({links:e,quickLinks:t,...a})=>i.a.createElement(Y,{"aria-hidden":!0,role:"navigation",...a},i.a.createElement("ul",null,null==e?void 0:e.map(e=>i.a.createElement(V,{key:e.path,...e}))),i.a.createElement("ul",null,null==t?void 0:t.map(({label:e,...t},a)=>i.a.createElement("li",{key:a},i.a.createElement("a",{...t,tabIndex:-1},e))))));Z.displayName="SSRNavigation";var Q=Z;const V=({links:e,label:t,path:a,image:n,...o})=>{const l=(null==o?void 0:o.href)?"a":"span",r=(null==o?void 0:o.href)?{tabIndex:-1}:{};return i.a.createElement("li",null,i.a.createElement(l,{id:"nav"+a,...o,...r},t),!!(null==e?void 0:e.length)&&i.a.createElement(J,{"aria-labelledby":"nav"+a},e.map((e,t)=>i.a.createElement(V,{key:t,...e}))))},Y=o.a.nav`
+  position: fixed;
+  pointer-events: none;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  transform: translateX(-100vw);
+`;Y.displayName="Container";const J=o.a.ul`
+  margin-left: ${c.b.xLarge};
+`;Y.displayName="Container";var ee,te=a("v7rG"),ae=a("IeTm"),ne=a("6WvN"),ie=a("2KnS"),oe=a("72eQ"),le=a("AVUp");!function(e){e.parent="parent",e.light="light",e.dark="dark"}(ee||(ee={}));const re={[u.a.mobile]:1,[u.a.tablet]:2,[u.a.desktop]:3,[u.a.desktopWide]:3},ce=(e,t)=>{switch(t.type){case"setColumn":if(e.delayedTimer&&clearTimeout(e.delayedTimer),e.columns.length>=t.index){const a=e.columns.slice(0,t.index);t.column&&(a[t.index]={...t.column,index:t.index});const n=re[e.deviceType],i=a.filter(e=>e.links).length;return{...e,usefulColumns:i,columns:a,columnsOnScreen:n,navigationIndex:i-n}}return e;case"removeColumn":{e.delayedTimer&&clearTimeout(e.delayedTimer);const t=re[e.deviceType],a=e.columns.splice(0,1),n=a.filter(e=>e.links).length;return{...e,columns:a,usefulColumns:n,navigationIndex:e.mobileMode?e.navigationIndex-1:n-t}}case"clearColumns":{e.delayedTimer&&clearTimeout(e.delayedTimer);const t=re[e.deviceType];return{...e,columns:[],usefulColumns:0,navigationIndex:e.mobileMode?e.navigationIndex:1-t}}case"setAiming":return e.aiming!==t.aiming?{...e,aiming:t.aiming}:e;case"setDisplayMode":{const a=re[t.deviceType],n=a>e.columns.filter(e=>e.links).length||0===e.columns.length,i=n?e.usefulColumns:1,o=n?e.columns:[e.columns[0]];return{...e,mobileMode:t.mobileMode,deviceType:t.deviceType,columnsOnScreen:a,usefulColumns:i,columns:o,navigationIndex:e.mobileMode?-1:a!==e.columnsOnScreen?1-a:e.navigationIndex}}case"setDelayedTimer":return e.delayedTimer&&clearTimeout(e.delayedTimer),{...e,delayedTimer:t.delayedTimer};case"clearDelayedTimer":return e.delayedTimer&&clearTimeout(e.delayedTimer),e.delayedTimer>-1?{...e,delayedTimer:-1}:e}},se=Object(n.forwardRef)(({links:e,quickLinks:t,header:a,variant:o=ee.dark,onAnimationEnded:l,closeButtonProps:r,...c},s)=>{const{closeNavigationDrawer:d}=Object(te.c)(),b=Object(te.b)();Object(le.b)({open:b,closeHandler:d});const{isKeyboardControlled:g}=Object(F.b)(),p=k(),{name:v}=Object(x.a)(),h=u.a[v||u.a.desktop],f=re[h],[O,j]=Object(n.useReducer)(ce,{mobileMode:p,deviceType:h,usefulColumns:0,columnsOnScreen:f,delayedTimer:0,navigationIndex:p?-1:1-f,columns:[],aiming:!1}),{columns:C,aiming:$,usefulColumns:D,navigationIndex:L,columnsOnScreen:T}=O,N=Object(n.useMemo)(()=>y(e,"nav"),[e]),[S,M]=Object(n.useState)(N[0].path),I=100/T,H=C[C.length-1]?C[C.length-1].image:null,W=Object(n.useCallback)(e=>{j({type:"setAiming",aiming:e})},[]);Object(n.useEffect)(()=>{j({type:"setDisplayMode",mobileMode:p,deviceType:h})},[p,h]);const B=Object(n.useCallback)((e,t=null)=>{j({type:"setColumn",index:e,column:t})},[]),R=Object(n.useCallback)((e,t=null)=>{$?j({type:"setDelayedTimer",delayedTimer:setTimeout(()=>{B(e,t)},1e3)}):B(e,t)},[B,$]),z=Object(n.useCallback)(()=>{j({type:"clearDelayedTimer"})},[]);Object(n.useEffect)(()=>{N&&b?B(0,{index:0,path:"nav",links:N,quickLinks:t,header:a}):b||(j({type:"clearColumns"}),M(N[0].path))},[B,t,a,N,b]);const K=Math.ceil(D*I),X=Object(n.useCallback)(()=>{null==l||l(b)},[l,b]),Z=b&&L>0,V=Object(n.useCallback)(()=>{B(C.length-1)},[C.length,B]),Y=Object(n.useMemo)(()=>C.map(e=>e.path),[C]),[J,ie]=Object(n.useState)(0),se=Object(n.useCallback)(e=>{switch(e.key){case"Escape":e.stopPropagation(),D>1?(j({type:"removeColumn"}),M(w(S))):d()}},[d,D,S]),pe=Object(n.useCallback)(e=>{var t,a,n,i;const o=null===(t=C[C.length-1])||void 0===t?void 0:t.links;let l=(null==o?void 0:o.findIndex(e=>e.path===S))||-1;if(l=l>-1?l:0,o)if(g)switch(e.key){case"ArrowLeft":case"Tab":if("Tab"===e.key&&(!e.shiftKey||1===D))break;e.preventDefault(),D>1?(j({type:"removeColumn"}),M(w(S))):(d(),M(N[0].path)),X();break;case"ArrowRight":e.preventDefault();!!(null===(n=null===(a=o[l])||void 0===a?void 0:a.links)||void 0===n?void 0:n.length)&&(B(C.length,{links:(null===(i=null==o?void 0:o[l])||void 0===i?void 0:i.links)||[],path:S}),M(S+".0")),X();break;case"ArrowDown":{e.preventDefault();let t=o[0].path;o[l+1]&&(t=o[l+1].path),M(t);break}case"ArrowUp":{e.preventDefault();let t=o[o.length-1].path;o[l-1]&&(t=o[l-1].path),M(t);break}}else e.preventDefault()},[C,g,S,D,X,d,N,B]),he=(e,t)=>{e&&t&&S==t&&e.focus()},xe=Object(_.g)({disabled:g,..._.d.largeSurface}),ke=Object(oe.a)(Math.min(K,100))+"vw",fe=Object(oe.a)(-Math.ceil(L*I))+"vw",Ce=b?Object(oe.a)(Z?0:100)+"vw":Object(oe.a)(-300)+"%",Ee=i.a.createElement(be,{...c,ref:s,onKeyDown:se},i.a.createElement(Oe,{...g?{as:"div",style:{transform:`translateX(${ke}) translateZ(0px)`}}:{as:G.a.div,initial:!1,animate:{x:ke},transition:xe,onAnimationComplete:X}},i.a.createElement(ge,{...g?{as:"div",style:{transform:`translateX(${fe}) translateZ(0px)`}}:{as:G.a.div,initial:!1,animate:{x:fe},transition:xe}},i.a.createElement(U.a,null,C.map(e=>{const{index:t,links:a,quickLinks:n,header:o}=e;return a?i.a.createElement(ve,{key:e.path,index:t,columnsOnScreen:T,aim:!p&&!(!C[t+1]||!C[t+1].links),aiming:$,setAiming:W,onMouseEnter:z,header:o,headerHeight:J,setHeaderHeight:ie,initial:{opacity:0},animate:{opacity:1},exit:{opacity:0,pointerEvents:"none"}},i.a.createElement(ye,null,i.a.createElement(A,{index:t,linkRef:he,links:a,setColumn:Y[t+1]?R:B,activePaths:Y,currentFocusPath:S,onKeyDown:pe}),n?i.a.createElement(E,{links:n,role:"contentinfo"}):null)):null}))),i.a.createElement(je,{...r,onClick:d,icon:m.a.close,size:q.a.large,variant:P.a.transparent})),i.a.createElement(U.a,null,T>2&&H&&i.a.createElement(me,{key:H.source,initial:{opacity:0},exit:{opacity:0},animate:{opacity:1},transition:Object(_.g)({duration:_.b.xSlow,reduced:!0})},i.a.createElement(ue,{stretch:!0,objectFit:"cover",objectPosition:"50% 50%",...H}))),i.a.createElement(we,{onClick:V,visible:Z,icon:m.a.arrowLeft,pairedWithText:!0,tabIndex:Z?0:-1,initial:!1,animate:{opacity:Z?1:0,x:Ce},transition:_.d.reduced}));return i.a.createElement(i.a.Fragment,null,!b&&i.a.createElement(Q,{links:N,quickLinks:t}),i.a.createElement(ae.a,null,i.a.createElement(ne.b,{visible:b,onClose:d}),i.a.createElement(de,{variant:o},Ee)))});se.displayName="NavigationDrawer";t.a=se;const de=({children:e,variant:t})=>{if(t===ee.parent)return i.a.createElement(n.Fragment,null,e);const a=X.a[t]||X.a.dark;return i.a.createElement(s.d,{theme:a},e)};de.displayName="ThemeWrapper";const me=Object(o.a)(G.a.div)`
+  background: ${({theme:e})=>e.navigationDrawer.imageBackgroundColor};
+  position: absolute;
+  top: 0;
+  width: ${100/3}vw;
+  left: ${100/3*2}vw;
+  height: 100%;
+  z-index: 1;
+`;me.displayName="ImageWrapper";const ue=Object(o.a)(r.a)`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+`;ue.displayName="AnimatedImage";const be=o.a.div`
+  position: fixed;
+  height: 100%;
+  width: 0;
+  z-index: ${ie.a.modal};
+`;be.displayName="Wrapper";const ge=o.a.div`
+  transform: translateX(0vw) translateZ(0px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 3;
+`;ge.displayName="ColumnWrapper";const pe=(e,t)=>{switch(t.type){case"alreadyAiming":return{...e,alreadyAiming:t.alreadyAiming};case"updateLoc":if(e.alreadyAiming)return e;let a=e.position;return{...e,loc:t.loc,prevLoc:e.loc,position:a}}},ve=i.a.memo(({children:e,aim:t,aiming:a,index:o,setAiming:l,columnsOnScreen:r,header:c,headerHeight:s,setHeaderHeight:d,...m})=>{const u=Object(n.useRef)(null),[b,p]=Object(n.useReducer)(pe,{loc:null,prevLoc:null,position:null,alreadyAiming:!1});Object(n.useEffect)(()=>{if(b.loc&&b.prevLoc){const e=window.innerWidth/r,t={x:e,y:0},a={x:e,y:window.innerHeight},n=f(b.loc,t),i=f(b.loc,a),o=f(b.prevLoc,t),c=f(b.prevLoc,a);l(n<o&&i>c)}},[l,b.loc,b.prevLoc,r]);const v=a;Object(n.useEffect)(()=>{p({type:"alreadyAiming",alreadyAiming:v})},[v]);const h=Object(n.useCallback)(e=>{t&&p({type:"updateLoc",loc:{x:e.nativeEvent.clientX,y:e.nativeEvent.clientY},index:o})},[o,t]),x=Object(n.useCallback)(e=>{e&&s!==e.offsetHeight&&d(e.offsetHeight)},[c,s,d]);Object(n.useEffect)(()=>{const e=setTimeout(()=>l(!1),250);return()=>{e&&clearTimeout(e)}},[a,l]);const k=Object(n.useRef)(null),{bottom:y,top:O}=Object(g.a)(k),w=Object(oe.a)(O>s?0:-100)+"%";return i.a.createElement(ke,{...m,ref:u,index:o,onMouseMove:h,columnsOnScreen:r},i.a.createElement(Ce,{ref:x,initial:!1,height:o>0?s:null,animate:{opacity:o?0:1},transition:_.d.default},c),i.a.createElement(Ee,{initial:!1,animate:{x:w,scaleX:O>s?1:.01},transition:_.d.reduced}),i.a.createElement(xe,{ref:k,tabIndex:-1},e),i.a.createElement(fe,{atBottom:y<10}),null)}),he=o.a.svg`
+  position: absolute;
+  top: 0;
+  right: 0;
+  pointer-events: none;
+
+  > polygon {
+    fill: ${({aiming:e,theme:t})=>"transparent"};
+  }
+`;he.displayName="AimSVG";const xe=Object(o.a)(B.a)`
+  position: relative;
+  flex: 1;
+
+  scrollbar-width: none;
+  overflow-style: none;
+  -ms-overflow-style: none;
+  overscroll-behavior: contain;
+
+  ::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+  }
+`;xe.displayName="ColumnInner";const ke=Object(o.a)(G.a.div)`
+  position: absolute;
+  top: 0;
+  left: ${({index:e,columnsOnScreen:t})=>e*(100/t)}vw;
+  height: 100%;
+  width: ${({columnsOnScreen:e})=>100/e}vw;
+  z-index: ${({index:e})=>e+1};
+  background: ${({theme:e})=>e.drawer.backgroundColor};
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+`,fe=o.a.div`
+  will-change: opacity;
+  position: absolute;
+  z-index: 10;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  opacity: ${({atBottom:e})=>e?0:1};
+  background: ${({theme:e})=>d.b`linear-gradient(${Object(b.d)(e.drawer.backgroundColor,l.b.none)} 0%, ${Object(b.d)(e.drawer.backgroundColor,l.b.full)} 100%)`};
+  transition: ${Object(_.e)("opacity",_.c.default,Object(_.f)(1e3))};
+  height: 15vh;
+`,ye=o.a.div(({theme:e})=>d.b`
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+
+    ${Object(v.a)({padding:e.navigationDrawer.innerSpacing})}
+  `);ke.displayName="StyledColumn";const Oe=o.a.div(({theme:e})=>d.b`
+    position: fixed;
+    top: 0;
+    height: 100%;
+    z-index: 2;
+    overflow: hidden;
+    left: -100vw;
+    width: 100vw;
+    background: ${e.drawer.backgroundColor};
+  `);Oe.displayName="Background";const we=Object(o.a)(Object(G.a)(P.b))(({theme:e,visible:t})=>d.b`
+    position: absolute;
+    z-index: 20;
+    pointer-events: ${t?"auto":"none"};
+    max-width: none;
+
+    ${Object(v.a)({top:e.navigationDrawer.buttonSpacing.top,left:e.navigationDrawer.buttonSpacing.left})}
+  `);we.displayName="BackButton";const je=Object(o.a)(Object(G.a)(P.b))(({theme:e})=>d.b`
+    pointer-events: auto;
+    position: absolute;
+    z-index: 20;
+    max-width: none;
+
+    ${Object(v.a)({top:e.navigationDrawer.buttonSpacing.top,right:e.navigationDrawer.buttonSpacing.right,left:{mobile:"auto",tablet:"auto",desktop:"auto"},margin:e.navigationDrawer.buttonSpacing.margin})}
+  `);je.displayName="CloseButton";const Ce=Object(o.a)(G.a.div,Object(R.a)(!1,"height"))(({theme:e,height:t})=>Object(d.b)(d.b`
+      min-height: ${c.b.large};
+
+      ${Object(v.a)({margin:e.navigationDrawer.headerSpacing})}
+    `,!!t&&d.b`
+        height: ${t}px;
+      `));Ce.displayName="HeaderWrapper";const Ee=Object(o.a)(Object(G.a)(z.a))`
+  height: 1px;
+  width: 100%;
+  transform: scaleX(0.01) translateX(-100%);
+  transform-origin: 0 0;
+
+  ${K.b.tablet} {
+    display: none;
+  }
+
+  &:after {
+    opacity: ${l.b.low};
+  }
+`;Ee.displayName="HeaderDivider"},D4su:function(e,t,a){"use strict";var n=a("51ZC"),i=a("Rq2L"),o=a("4j9f"),l=a("HBCW"),r=a("mEU2");const c={navigationDrawer:{light:{backgroundColor:n.b.white,activeLinkColor:n.b.graphiteBlack,imageBackgroundColor:n.b.ironGrey,innerSpacing:{mobile:"0 "+i.b.large,tablet:"0 "+i.b.xLarge,desktop:`0 ${i.b.xLarge} 0 ${i.b.xxxLarge}`,desktopWide:`0 ${i.b.xLarge} 0 ${i.b.xxxxxxLarge}`},buttonSpacing:{top:{mobile:i.b.small,tablet:i.b.large,desktop:Object(i.a)(2.5)},left:{mobile:i.b.large,tablet:i.b.xLarge,desktop:i.b.xxxxLarge},right:{mobile:i.b.large,tablet:i.b.xLarge,desktopWide:Object(i.a)(2.25)},margin:{mobile:"0",tablet:`-${i.b.xxSmall} -${i.b.xSmall}`,desktop:`-${i.b.xxSmall} -${Object(i.a)(.35)}`,desktopWide:`-${i.b.xxSmall} -${Object(i.a)(.55)}`}},headerSpacing:{mobile:i.b.large,tablet:i.b.xLarge,desktop:`${i.b.xxLarge} ${i.b.xxLarge} ${i.b.xxLarge} ${i.b.xxxLarge}`,desktopWide:`${i.b.xxLarge} ${i.b.xxLarge} ${i.b.xxLarge} ${i.b.xxxxxxLarge}`},navigationList:{link:{fontSize:{mobile:o.b.large},lineHeight:{mobile:l.b.large},letterSpacing:{mobile:r.b.large},padding:{mobile:i.b.medium},margin:{mobile:"0 -"+i.b.medium}},icon:{width:{mobile:i.b.large,tablet:i.b.small}}},quickLinks:{spacing:{mobile:i.b.xxLarge+" 0",tablet:`${i.b.xxLarge} 0 ${i.b.xxxxLarge}`},link:{marginTop:i.b.medium}}},dark:{backgroundColor:n.b.graphiteBlack,activeLinkColor:n.b.white}}};t.a=c},v7rG:function(e,t,a){"use strict";a.d(t,"c",(function(){return c})),a.d(t,"b",(function(){return s})),a.d(t,"a",(function(){return d}));var n=a("q1tI"),i=a.n(n),o=a("T7Xx");const l=e=>()=>{console.warn(`Trying to use drawer context consumer, but no context provider for "${e}". Please make sure you use the useNavigationDrawer inside a <PolestarApp />`)},r=Object(n.createContext)({navigationDrawerOpen:Object(o.c)(!1),toggleNavigationDrawer:l("toggleNavigationDrawer"),openNavigationDrawer:l("openNavigationDrawer"),closeNavigationDrawer:l("closeNavigationDrawer")}),c=()=>Object(n.useContext)(r),s=()=>{const{navigationDrawerOpen:e}=Object(n.useContext)(r),[t,a]=Object(n.useState)(e.get());return Object(n.useEffect)(()=>e.onChange(a),[e]),t},d=({children:e})=>{const t=Object(o.a)(!1),a=Object(n.useCallback)(()=>{t.set(!0)},[t]),l=Object(n.useCallback)(()=>{t.set(!1)},[t]),c=Object(n.useCallback)(()=>{t.set(!t.get())},[t]);return i.a.createElement(r.Provider,{value:{navigationDrawerOpen:t,openNavigationDrawer:a,closeNavigationDrawer:l,toggleNavigationDrawer:c}},e)};d.displayName="NavigationDrawerProvider"}}]);
